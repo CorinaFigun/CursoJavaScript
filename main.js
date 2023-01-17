@@ -43,28 +43,30 @@ while (cocinar != "si") {
 }
 
 
-function queRico () {
-let recetasEspecificas = prompt("¿Qué tipo de recetas te gusta hacer? 1)Pastas 2)Pizza 3)Postres 0)Para salir ");
+function queRico() {
+  let recetas = prompt("¿Qué tipo de recetas te gusta hacer? 1)Pastas 2)Pizza 3)Postres 0)Para salir ") ;
 
-while (recetasEspecificas != 0) {
+  while (recetas !== 0) {
 
-  switch (recetasEspecificas) {
+    switch (recetas) {
 
-    case "1":
-      alert ("te dejamos el link de nuestras mejores pastas:");
-      break;
-    case "2":
-      alert ("te dejamos el link de nuestras mejores pizzas:");
-      break;
-    case "3":
-      alert ("te dejamos el link de nuestras mejores postres:");
-      break;
-    
-  }
+      case 1:
+        alert("te dejamos el link de nuestras mejores pastas:") ;
+        break;
+      case 2:
+        alert("te dejamos el link de nuestras mejores pizzas:") ;
+        break;
+      case 3:
+        alert("te dejamos el link de nuestras mejores postres:") ;
+        break;
+      default:
+        alert("seguramente encontraras otras recetas de tu interes") ;
+        break;
+    }
 
-  recetasEspecificas = prompt("¿Qué tipo de recetas te gusta hacer? 1)Pastas 2)Pizza 3)Postres 0)Para salir ");
+    recetas = prompt("¿Qué tipo de recetas te gusta hacer? 1)Pastas 2)Pizza 3)Postres 0)Para salir ") ;
 
   }
 }
-queRico ()
+queRico()
 
