@@ -1,34 +1,18 @@
-function queRico() {
 
-  let recetasEspecificas = prompt("¿Qué tipo de recetas te gusta hacer? 1)Pastas 2)Pizza 3)Postres 0)Para salir ")
-  while (recetasEspecificas != 0) {
 
-    switch (recetasEspecificas) {
 
-      case "1":
-        alert("te dejamos el link de nuestras mejores pastas:");
+function nombre() {
+  let nombreIngresado = prompt("Ingrese su nombre")
 
-      case "2":
-        alert("te dejamos el link de nuestras mejores pizzas:");
+  console.log("Mensaje de prueba")
+  let nombre = "Corina Figun"
+  console.log(nombre)
 
-      case "3":
-        alert("te dejamos el link de nuestras mejores postres:");
-default: 
-alert ("Que recetas te gustan?")
-
-        recetasEspecificas = prompt("¿Qué tipo de recetas te gusta hacer? 1)Pastas 2)Pizza 3)Postres 0)Para salir ")
-    }
-  }
+  alert("Hola" + " " + nombreIngresado);
 }
 
 
-let nombreIngresado = prompt("Ingrese su nombre")
-
-console.log("Mensaje de prueba")
-let nombre = "Corina Figun"
-console.log(nombre)
-
-alert("Hola" + " " + nombreIngresado);
+nombre();
 
 let edad = parseInt(prompt("Contanos cuál es tu edad"));
 
@@ -59,10 +43,28 @@ while (cocinar != "si") {
 }
 
 
+function queRico () {
+let recetasEspecificas = prompt("¿Qué tipo de recetas te gusta hacer? 1)Pastas 2)Pizza 3)Postres 0)Para salir ");
 
+while (recetasEspecificas != 0) {
 
+  switch (recetasEspecificas) {
 
+    case "1":
+      alert ("te dejamos el link de nuestras mejores pastas:");
+      break;
+    case "2":
+      alert ("te dejamos el link de nuestras mejores pizzas:");
+      break;
+    case "3":
+      alert ("te dejamos el link de nuestras mejores postres:");
+      break;
+    
+  }
 
+  recetasEspecificas = prompt("¿Qué tipo de recetas te gusta hacer? 1)Pastas 2)Pizza 3)Postres 0)Para salir ");
 
-queRico()
+  }
+}
+queRico ()
 
