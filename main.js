@@ -14,7 +14,7 @@ if (pizza) { prompt ("te dejamos el link de nuestras mejores pizzas")}
 
 if (postres) {prompt ("te dejamos el link de nuestros mejores postres")}
 
-else {alert ("lo siento")}
+else {prompt ("lo siento")}
 }
 
 let nombreIngresado = prompt ("Ingrese su nombre")
@@ -56,6 +56,27 @@ let gustosCocina = prompt ("¿Qué tipo de recetas te gusta hacer?")
   
 console.log ("gustos cocina")
 
-QueRico ()
 
+  
+  
+const pastas = ["pastas", "pasta", "tallarines", "ravioles", "ñoquis", "fideos", "fideo"]
+  
+const pizza = ["pizza", "piza", "pisa", "pizzeta", "muzzarella", "fugazzeta"]
+  
+const postres = ["postre", "postres", "tiramisu", "mousse"]
+  
+let recetas = "RecetasEspecificas"
+
+do {
+alert= ("¿Qué tipo de recetas te gusta hacer?")
+pastas = prompt ("te dejamos el link de nuestras mejores pastas:")
+}
+
+while (recetas != "pastas" )  {
+
+  alert= ("si tu respuesta no es afirmativa no tenemos cómo ayudarte")
+  Cocinar = prompt ("entonces estas en el lugar indicado")
+
+}
+QueRico ()
 
