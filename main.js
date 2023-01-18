@@ -60,7 +60,7 @@ function queRico() {
         prompt ("te dejamos el link de nuestras mejores postres:");
         break;
       default:
-        console.log ("seguramente encontraras otras recetas de tu interes");
+        prompt ("seguramente encontraras otras recetas de tu interes");
         break;
     }
 
