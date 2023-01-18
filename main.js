@@ -11,6 +11,32 @@ function nombre() {
   alert("Hola" + " " + nombreIngresado);
 }
 
+function queRico() {
+  let recetas = prompt("¿Qué tipo de recetas te gusta hacer? 1)Pastas 2)Pizza 3)Postres 0)Para salir ");
+
+  while (recetas !== 0) {
+
+    switch (recetas) {
+
+      case "1":
+        prompt ("te dejamos el link de nuestras mejores pastas:");
+        break;
+      case "2":
+        prompt ("te dejamos el link de nuestras mejores pizzas:");
+        break;
+      case "3":
+        prompt ("te dejamos el link de nuestras mejores postres:");
+        break;
+      default:
+        prompt ("seguramente encontraras otras recetas de tu interes");
+        break;
+    }
+
+    recetas = prompt("¿Qué tipo de recetas te gusta hacer? 1)Pastas 2)Pizza 3)Postres 0)Para salir ");
+
+  }
+}
+
 
 nombre();
 
@@ -43,41 +69,18 @@ while (cocinar != "si") {
 }
 
 
-function queRico() {
-  let recetas = prompt("¿Qué tipo de recetas te gusta hacer? 1)Pastas 2)Pizza 3)Postres 0)Para salir ");
 
-  while (recetas !== 0) {
 
-    switch (recetas) {
+queRico();
 
-      case "1":
-        prompt ("te dejamos el link de nuestras mejores pastas:");
-        break;
-      case "2":
-        prompt ("te dejamos el link de nuestras mejores pizzas:");
-        break;
-      case "3":
-        prompt ("te dejamos el link de nuestras mejores postres:");
-        break;
-      default:
-        prompt ("seguramente encontraras otras recetas de tu interes");
-        break;
-    }
-
-    recetas = prompt("¿Qué tipo de recetas te gusta hacer? 1)Pastas 2)Pizza 3)Postres 0)Para salir ");
-
-  }
-}
-queRico()
-
-function TiposRecetas(tipo, tiempo, dificultad, link ) {
+function TiposRecetas (tipo, tiempo, dificultad, link ) {
 
   this.tipo = tipo;
   this.tiempo = tiempo;
   this.dificultad = dificultad;
   this.link = link;
   
-  his.mostrarDificultad = function () {
+  this.mostrarDificultad = function () {
     console.log("Esta receta es" + " " + dificultad)
 
   }
@@ -138,7 +141,7 @@ while (operacion !== "4") {
 
     break;
 
-    case 3:
+    case "3":
 
     break;
 
