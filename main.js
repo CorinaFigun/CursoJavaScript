@@ -1,6 +1,5 @@
 
 
-
 function nombre() {
   let nombreIngresado = prompt("Ingrese su nombre")
 
@@ -14,7 +13,7 @@ function nombre() {
 function queRico() {
   let recetas = prompt("¿Qué tipo de recetas te gusta hacer? 1)Pastas 2)Pizza 3)Postres 0)Para salir ");
 
-  while (recetas !== 0) {
+  while (recetas !== "0") {
 
     switch (recetas) {
 
@@ -72,7 +71,6 @@ while (cocinar != "si") {
 
 
 queRico();
-
 function TiposRecetas (tipo, tiempo, dificultad, link ) {
 
   this.tipo = tipo;
@@ -85,6 +83,9 @@ function TiposRecetas (tipo, tiempo, dificultad, link ) {
 
   }
 }
+
+TiposRecetas ();
+ this.mostrarDificultad (); 
 
 const receta1 = new TiposRecetas ("pastas","treinta minutos","baja", "www.recetasCori/pennerigatti.net"); 
   
@@ -134,7 +135,9 @@ while (operacion !== "4") {
   switch (operacion) {
 
     case "1":
-
+    postresConFrutas () 
+      let frutas = prompt ("Queres hacer una receta con frutas?")
+    
     break;
 
     case "2":
