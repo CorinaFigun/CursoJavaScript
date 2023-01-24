@@ -71,6 +71,59 @@ while (cocinar != "si") {
 
 
 queRico();
+
+function KilogramosAOtro (valor1) {
+  return (cantidad1) => (valor1 * cantidad1);
+   }
+  
+  const KilogramosALibras = KilogramosAOtro (2.20462);
+  const KilogramosAOnzas= KilogramosAOtro (35.274);
+  const KilogramosAGramos= KilogramosAOtro (1000);
+  
+  const cantidad1 = 2; 
+  console.log (KilogramosAGramos (cantidad1)); 
+  
+  
+  
+  function LibrasAOtro (valor2) {
+    return (cantidad2) => (valor2 / cantidad2);
+     }
+    
+     const LibrasAKilogramos = LibrasAOtro (2.2046);
+    const LibrasAGramos = LibrasAOtro (0.0022046);
+    const LibrasAOnzas = LibrasAOtro (0.0625);
+    
+    const cantidad2 = 4;
+    
+    console.log (LibrasAKilogramos (cantidad2)); 
+    
+    
+    
+    
+    
+    
+    function OnzasAOtro (valor3) {
+    return (cantidad3) => (valor3 / cantidad3);
+     }
+    
+    
+    const OnzasAKilogramos = OnzasAOtro (35.274);
+    const OnzasAGramos = OnzasAOtro (0.035274);
+    const OnzasALibras = OnzasAOtro (16);
+    
+    const cantidad3 = 3;
+    
+    console.log (OnzasALibras (cantidad3)); 
+    
+  
+  
+  
+  
+  
+
+
+
+
 function TiposRecetas (tipo, tiempo, dificultad, link ) {
 
   this.tipo = tipo;
@@ -153,52 +206,6 @@ while (operacion !== "4") {
       break;
   }
 }
-
-
-
-function conversorKilogramosAOtro (valor1) {
-return (cantidad1) => (valor1 * cantidad1);
- }
-
-const KilogramosALibras = KilogramosAOtro (2.20462);
-const KilogramosAOnzas= KilogramosAOtro (35.274);
-const KilogramosAGramos= KilogramosAOtro (1000);
-
-const cantidad1 = 2; 
-console.log (KilogramosAGramos (cantidad1)); 
-
-
-function conversorLibrasAOtro (valor2) {
-  return (cantidad2) => (valor2 / cantidad2);
-   }
-  
-   const LibrasAKilogramos = LibrasAOtro (2.2046);
-  const LibrasAGramos = LibrasAOtro (0.0022046);
-  const LibrasAOnzas = LibrasAOtro (0.0625);
-  
-  const cantidad2 = 4;
-  
-  console.log (LibrasAKilogramos (cantidad)); 
-  
-  
-  
-  
-  
-  
-  function conversorOnzasAOtro (valor3) {
-  return (cantidad3) => (valor3 / cantidad3);
-   }
-  
-  
-  const OnzasAKilogramos = OnzasAOtro (35.274);
-  const OnzasAGramos = OnzasAOtro (0.035274);
-  const OnzasALibras = OnzasAOtro (16);
-  
-  const cantidad3 = 3;
-  
-  console.log (OnzasALibras (cantidad3)); 
-  
-
 
 
 
