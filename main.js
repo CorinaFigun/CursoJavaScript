@@ -74,12 +74,18 @@ queRico();
 
 function KilogramosAOtro (valor1) {
   return (cantidad1) => (valor1 * cantidad1);
-   }
+  }
   
   const KilogramosALibras = KilogramosAOtro (2.20462);
   const KilogramosAOnzas= KilogramosAOtro (35.274);
   const KilogramosAGramos= KilogramosAOtro (1000);
+
   
+const div = document.createElement ()
+div = "conversorKilogramosAOtro" ;
+
+
+
   const cantidad1 = 2; 
   console.log (KilogramosAGramos (cantidad1)); 
   KilogramosAOtro = prompt (KilogramosAGramos (cantidad1));
@@ -97,6 +103,7 @@ function KilogramosAOtro (valor1) {
     const cantidad2 = 4;
     
     console.log (LibrasAKilogramos (cantidad2)); 
+    LibrasAOtro = prompt (LibrasAKilogramos (cantidad2));
     
     
     
@@ -133,13 +140,12 @@ function TiposRecetas (tipo, tiempo, dificultad, link ) {
   this.link = link;
   
   this.mostrarDificultad = function () {
-    console.log("Esta receta tiene un grado de" + " " + dificultad)
-
+    console.log("Esta receta tiene un grado de dificultad" + " " + dificultad)
+this.mostrarDificultad = prompt ("Esta receta tiene un grado de dificultad" + " " + dificultad)
   }
 }
 
-TiposRecetas ();
- this.mostrarDificultad (); 
+
 
 const receta1 = new TiposRecetas ("pastas","treinta minutos","baja", "www.recetasCori/pennerigatti.net"); 
   
@@ -154,6 +160,7 @@ const receta4 = new TiposRecetas ("postres", "cuarenta minutos", "baja", "www.re
 if ("link" in receta1) {
 
   console.log("Tenemos el link de la receta de penne rigatti")
+
 }
 
 for (const propiedad in receta1) {
@@ -190,7 +197,7 @@ while (operacion !== "4") {
 
     case "1":
     postresConFrutas () 
-      let frutas = prompt ("Queres hacer una receta con frutas?")
+      operacion = prompt ("Queres hacer una receta con frutas?")
     
     break;
 
