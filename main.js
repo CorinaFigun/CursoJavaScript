@@ -80,11 +80,7 @@ function KilogramosAOtro (valor1) {
   const KilogramosAOnzas= KilogramosAOtro (35.274);
   const KilogramosAGramos= KilogramosAOtro (1000);
 
-  
-const div = document.createElement ()
-div = "conversorKilogramosAOtro" ;
-
-
+ 
 
   const cantidad1 = 2; 
   console.log (KilogramosAGramos (cantidad1)); 
@@ -217,3 +213,5 @@ while (operacion !== "4") {
 
 
 
+const input = getElementById ("input1");
+console.log (input.value);
