@@ -118,6 +118,7 @@ function KilogramosAOtro (valor1) {
     const cantidad3 = 3;
     
     console.log (OnzasALibras (cantidad3)); 
+    OnzasAOtro = prompt (OnzasALibras (cantidad3));
     
   
   
