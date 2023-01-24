@@ -82,6 +82,7 @@ function KilogramosAOtro (valor1) {
   
   const cantidad1 = 2; 
   console.log (KilogramosAGramos (cantidad1)); 
+  KilogramosAOtro = prompt (KilogramosAGramos (cantidad1));
   
   
   
@@ -132,7 +133,7 @@ function TiposRecetas (tipo, tiempo, dificultad, link ) {
   this.link = link;
   
   this.mostrarDificultad = function () {
-    console.log("Esta receta es" + " " + dificultad)
+    console.log("Esta receta tiene un grado de" + " " + dificultad)
 
   }
 }
