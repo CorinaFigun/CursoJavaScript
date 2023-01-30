@@ -56,17 +56,17 @@ do {
 
 let cocinar = "TeGustaCocinar"
 
+alert = ("Ahora queremos saber si nuestro contenido es el indicado para vos");
+
 do {
-  alert = ("Ahora queremos saber si nuestro contenido es el indicado para vos")
-  cocinar = prompt("contanos si te gusta cocinar para conocer el contenido de nuestro sitio (contestar con si o no)")
-}
+  cocinar = prompt("contanos si te gusta cocinar para conocer el contenido de nuestro sitio (contestar con si o no)");
 
-while (cocinar != "si") {
+} while (cocinar != "si");
 
-  alert = ("si tu respuesta no es afirmativa no tenemos cómo ayudarte")
-  Cocinar = prompt("entonces estas en el lugar indicado")
-}
+  cocinar = prompt("entonces estas en el lugar indicado");
 
+
+alert = ("si tu respuesta no es afirmativa no tenemos cómo ayudarte");
 
 
 
