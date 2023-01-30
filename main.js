@@ -125,14 +125,15 @@ alert(OnzasALibras(cantidad3));
 
 
 
+/**Objeto con Class */
 
-
-class TiposRecetas {
-  constructor(tiempo, dificultad, link) {
+class TiposPostres {
+  constructor(tiempo, dificultad, link, id) {
 
     this.tiempo = tiempo;
     this.dificultad = dificultad;
     this.link = link;
+    this.id =id; 
 
 
     this.mostrarDificultad = function () {
@@ -144,23 +145,22 @@ class TiposRecetas {
 
 
 
-const receta1 = new TiposRecetas("treinta minutos", "baja", "www.recetasCori/pennerigatti.net");
+const postre1 = new TiposPostres("treinta minutos", "baja", "www.recetasCori/moussemaracuyá.net",1);
 
-const receta2 = new TiposRecetas("una hora y media", "alta", "www.recetascori/rogel.net");
+const postre2 = new TiposPostres("una hora y media", "media", "www.recetascori/tiramisu.net",2);
 
-const receta3 = new TiposRecetas("cuarenta minutos", "baja", "www.recetascori/pizzaroqueydurazno");
+const postre3 = new TiposPostres("cuarenta minutos", "alta", "www.recetascori/rogel",3);
 
-const receta4 = new TiposRecetas("cuarenta minutos", "media", "www.recetascori/moussemaracuya");
 
-receta3.mostrarDificultad();
+postre3.mostrarDificultad();
 
-const recetasTipos = [receta1, receta2, receta3, receta4]
+const recetasTipos = [postre1, postre2, postre3]
 let dificultades = []
 
 function elegirDificultad() {
   let recetaElegidaDificultad;
   do {
-    recetaElegidaDificultad = prompt("Ingrese cuanta dificultad desea que tenga la próxima receta que va a cocinar: 1-baja 2-media 3-alta. Para salir, ingrese 0. Para buscar recetas según ingredientes presione 4");
+    recetaElegidaDificultad = prompt("Ingrese el grado de dificultad del postre que le gustaría cocinar: 1-baja 2-media 3-alta. Para salir, ingrese 0. Para buscar recetas según ingredientes presione 4");
 
     if (recetaElegidaDificultad >= 0 && recetaElegidaDificultad <= 4) {
       switch (recetaElegidaDificultad) {
@@ -204,3 +204,4 @@ if (dificultades.some (recetaDificultad => recetaDificultad.id  === recetaElegid
 }
 
 ElegirReceta ();
+elegirDificultad ();
