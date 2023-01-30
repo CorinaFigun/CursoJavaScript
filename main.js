@@ -164,10 +164,13 @@ for (const propiedad in receta1) {
 console.log (receta1 [propiedad]);
 }
 
+
+
 const ingredientes = [ "harina", "aceite", "huevos", "polvo de hornear", "levadura", "verduras", "frutas", "azucar", "sal", "leche", "agua" ] 
 for (const ingrediente of ingredientes) {
   console.log (ingrediente); 
 }
+
 
 
 class Postres {
@@ -181,7 +184,20 @@ class Postres {
   this.crema = crema;
   this.otros= otros;
 }
+
+mostrarIngredientesSinFrutas (ingredientesRecetaSinFrutas) {
+return ingredientesRecetaSinFrutas - this.fruta; 
 }
+
+mostrarIngredientesSinTACC (ingredientesSinTACC) {
+  return ingredientes - this.harina;
+}
+
+mostrarIngredientesSinLactosa (IngredientesSinLactosa) {
+  return IngredientesSinLactosa - this.leche - this.crema;
+}
+}
+
 
 const postres = [
   new Postres ( "no" ,  "no",  "100 gr",  "1 maracuya",  "no",  "quinientos gr", "leche condensada - 25 ml" ),
@@ -199,12 +215,15 @@ while (operacion !== "4") {
     break;
 
     case "2":
-
+postresFaciles ()
+operacion = prompt ("Queres hacer una receta fácil?")
     break;
 
     case "3":
-
+tortas ()
+operacion = prompt ("Queres hacer una torta?")
     break;
+  
 
     default:
       console.log ("opcion incorrecta");
