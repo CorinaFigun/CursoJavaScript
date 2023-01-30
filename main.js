@@ -63,10 +63,8 @@ do {
 
 } while (cocinar != "si");
 
-alert("entonces estas en el lugar indicado")
+alert("entonces estas en el lugar indicado. Si tu respuesta es negativa no podremos ayudarte :(")
 
-while (cocinar == "no");
-alert("nopodemos auyudarte")
 
 
 queRico();
@@ -152,56 +150,60 @@ const postre2 = new TiposPostres("una hora y media", "media", "www.recetascori/t
 const postre3 = new TiposPostres("cuarenta minutos", "alta", "www.recetascori/rogel",3);
 
 
-postre3.mostrarDificultad();
 
-const recetasTipos = [postre1, postre2, postre3]
-let dificultades = []
+const postres = [postre1, postre2, postre3]
+let postresDificultades = []
 
-function elegirDificultad() {
-  let recetaElegidaDificultad;
+function seleccionPostre() {
+  let postreElegido;
   do {
-    recetaElegidaDificultad = prompt("Ingrese el grado de dificultad del postre que le gustaría cocinar: 1-baja 2-media 3-alta. Para salir, ingrese 0. Para buscar recetas según ingredientes presione 4");
+    postreElegido = parseInt (prompt("Ingrese el grado de dificultad del postre que le gustaría cocinar: 1-baja 2-media 3-alta. Para salir, ingrese 0. Para buscar recetas de pastas presione 4"))
 
-    if (recetaElegidaDificultad >= 0 && recetaElegidaDificultad <= 4) {
-      switch (recetaElegidaDificultad) {
+    if (postreElegido >= 0 && postreElegido <= 4) {
+      switch (postreElegido) {
+        case 1:
+          alert ("Podes ver nuestra receta de mousse de maracuya en: www.recetasCori/moussemaracuyá.net");
+          prompt = ("Chequea los datos siguientes" + postre1);
+          break;
+
         case 0:
           alert("Saliste, nos vemos en la próxima receta!")
           break;
 
         case 4:
-          recetasPorIngredientes()
+          recetasPastas()
           break;
 
         default:
-          buscarRecetaDificultad (recetaElegidaDificultad)
+          buscarPostre (postreElegido)
           break;
       }
     }
     else {
-      alert("ingreso un valor inválido")
+      alert("ingresó un valor inválido")
     }
   }
 
- while (recetaElegidaDificultad !== 4 && recetaElegidaDificultad !== 0)
+ while (postreElegido !== 4 && postreElegido !== 0)
 }
 
-function buscarRecetaDificultad (valor) {
-const recetaBuscadaDificultad = recetasTipos.find (recetaDificultad => receta.id === valor)
-elegirDificultad (recetaBuscadaDificultad)
+function buscarPostre (valor) {
+const postreBuscado = postres.find (postre => postre.id === valor)
+elegirDificultad (postreBuscado)
 }
 
-function elegirDificultad (recetaElegidaDificultad) {
-  let dificultades = prompt ("Ingrese dificultad deseada");
-if (dificultades.some (recetaDificultad => recetaDificultad.id  === recetaElegidaDificultad.id)) {
-  dificultades.forEach (recetaDificultad=> {
-    if (recetaDificultad.id === recetaElegidaDificultad.id) {
-      recetaDificultad.dificultades = recetaElegidaDificultad.dificultades + dificultades 
+function elegirDificultad (dificultadElegida) {
+  let postresDificultades = prompt ("Ingrese dificultad deseada");
+if (postresDificultades.some (postre => postre.id  === dificultadElegida.id)) {
+  postreDificultades.forEach (postre=> {
+    if (postre.id === dificultadElegida.id) {
+      postre.postresDificultades = postre.postresDificultades + postresDificultades 
     }
   } )
 } else {
+
   alert ("Muchas gracias")
 }
 }
 
-ElegirReceta ();
-elegirDificultad ();
+seleccionPostre ();
