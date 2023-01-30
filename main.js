@@ -18,16 +18,16 @@ function queRico() {
     switch (recetas) {
 
       case "1":
-        prompt ("te dejamos el link de nuestras mejores pastas:");
+        alert ("te dejamos el link de nuestras mejores pastas: www.RecetasCori/pastas.net");
         break;
       case "2":
-        prompt ("te dejamos el link de nuestras mejores pizzas:");
+        alert ("te dejamos el link de nuestras mejores pizzas: www.RecetasCori/pizzas.net");
         break;
       case "3":
-        prompt ("te dejamos el link de nuestras mejores postres:");
+        alert ("te dejamos el link de nuestras mejores postres: www.RecetasCori/postres.net");
         break;
       default:
-        prompt ("seguramente encontraras otras recetas de tu interes");
+        alert ("seguramente encontraras otras recetas de tu interes");
         break;
     }
 
@@ -56,17 +56,17 @@ do {
 
 let cocinar = "TeGustaCocinar"
 
-alert = ("Ahora queremos saber si nuestro contenido es el indicado para vos");
+alert ("Ahora queremos saber si nuestro contenido es el indicado para vos")
 
 do {
   cocinar = prompt("contanos si te gusta cocinar para conocer el contenido de nuestro sitio (contestar con si o no)");
 
 } while (cocinar != "si");
 
-  cocinar = prompt("entonces estas en el lugar indicado");
+  alert ("entonces estas en el lugar indicado")
 
 
-alert = ("si tu respuesta no es afirmativa no tenemos cómo ayudarte");
+alert ("si tu respuesta no es afirmativa no tenemos cómo ayudarte");
 
 
 
@@ -84,9 +84,8 @@ function KilogramosAOtro (valor1) {
 
   const cantidad1 = 2; 
   console.log (KilogramosAGramos (cantidad1)); 
-  KilogramosAOtro = prompt (KilogramosAGramos (cantidad1));
   
-  
+  alert (KilogramosAGramos (cantidad1))
   
   function LibrasAOtro (valor2) {
     return (cantidad2) => (valor2 / cantidad2);
@@ -99,7 +98,7 @@ function KilogramosAOtro (valor1) {
     const cantidad2 = 4;
     
     console.log (LibrasAKilogramos (cantidad2)); 
-    LibrasAOtro = prompt (LibrasAKilogramos (cantidad2));
+     alert (LibrasAKilogramos (cantidad2));
     
     
     
@@ -118,7 +117,7 @@ function KilogramosAOtro (valor1) {
     const cantidad3 = 3;
     
     console.log (OnzasALibras (cantidad3)); 
-    OnzasAOtro = prompt (OnzasALibras (cantidad3));
+    alert (OnzasALibras (cantidad3));
     
   
   
@@ -138,7 +137,7 @@ function TiposRecetas (tipo, tiempo, dificultad, link ) {
   
   this.mostrarDificultad = function () {
     console.log("Esta receta tiene un grado de dificultad" + " " + dificultad)
-this.mostrarDificultad = prompt ("Esta receta tiene un grado de dificultad" + " " + dificultad)
+this.mostrarDificultad = alert ("Esta receta tiene un grado de dificultad" + " " + dificultad)
   }
 }
 
@@ -159,6 +158,7 @@ if ("link" in receta1) {
   console.log("Tenemos el link de la receta de penne rigatti")
 
 }
+alert ("Tenemos el link de la receta de penne rigatti")
 
 for (const propiedad in receta1) {
 console.log (receta1 [propiedad]);
@@ -169,6 +169,7 @@ console.log (receta1 [propiedad]);
 const ingredientes = [ "harina", "aceite", "huevos", "polvo de hornear", "levadura", "verduras", "frutas", "azucar", "sal", "leche", "agua" ] 
 for (const ingrediente of ingredientes) {
   console.log (ingrediente); 
+  alert (ingrediente)
 }
 
 
