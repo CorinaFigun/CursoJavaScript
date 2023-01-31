@@ -1,5 +1,5 @@
 
-
+/**funcion para pedir el nombre */
 function nombre() {
   let nombreIngresado = prompt("Ingrese su nombre")
 
@@ -9,6 +9,8 @@ function nombre() {
 
   alert("Hola" + " " + nombreIngresado);
 }
+
+/**funcion para pedir la edad */
 
 function edad() {
   let edad = parseInt(prompt("Contanos cuál es tu edad"));
@@ -26,6 +28,8 @@ function edad() {
 
 }
 
+/** Pregunta sobre cocina */
+
 function contenido() {
   let cocinar = "TeGustaCocinar"
 
@@ -39,6 +43,7 @@ function contenido() {
   alert("entonces estas en el lugar indicado. Si tu respuesta es negativa no podremos ayudarte :(")
 }
 
+/** Pregunta tipos de recetas */
 function queRico() {
   let recetas = prompt("¿Qué tipo de recetas te gusta hacer? 1)Pastas 2)Pizza 3)Postres 0)Para salir ");
 
@@ -66,7 +71,7 @@ function queRico() {
 }
 
 
-/**Objeto con Class */
+/**Objeto con Class para postres*/
 
 class TiposPostres {
   constructor(tiempo, dificultad, link, id) {
@@ -136,41 +141,13 @@ function seleccionPostre() {
 }
 
 
-
-
-
-
-nombre();
-
-
-edad();
-
-
-
-contenido();
-
-
-queRico();
-
-
-seleccionPostre();
-
-
-
-
-
-
-
-
-
-
-
+/**Conversor con switch */
 function conversor() {
   let medidaElegida;
   do {
-    medidaElegida = parseInt(prompt("Ingrese qué medidas desea convertir 1-Kilogramos a Libras 2-Libras a Kilogramos 3-Kilogramos a Onzas 4- Onzas a Kilogramos. Si no queres hacer ninguna conversión, ingresa 0. "))
+    medidaElegida = parseInt(prompt("Ingrese qué medidas desea convertir 1-Kilogramos a Libras 2-Libras a Kilogramos 3-Kilogramos a Onzas 4- Onzas a Kilogramos 5-Libras a Onzas. Si no queres hacer ninguna conversión, ingresa 0. "))
 
-    if (medidaElegida >= 0 && medidaElegida <= 5) {
+    if (medidaElegida >= 0 && medidaElegida <= 6) {
       switch (medidaElegida) {
         case 1:
 
@@ -186,14 +163,17 @@ function conversor() {
           convertirKilogramosaOnzas()
           break;
 
-        case 0:
-          alert("Saliste, nos vemos en la próxima receta!")
-          break;
-
         case 4:
           convertirOnzasaKilogramos()
           break;
 
+        case 5:
+          convertirLibrasAOnzas()
+          break;
+
+        case 0:
+          alert("Saliste, nos vemos en la próxima receta!")
+          break;
 
       }
     }
@@ -202,7 +182,7 @@ function conversor() {
     }
   }
 
-  while (medidaElegida !== 4 && medidaElegida !== 0)
+  while (medidaElegida !== 6 && medidaElegida !== 0)
 }
 
 function convertirKilogramosALibras() {
@@ -234,9 +214,32 @@ function convertirOnzasaKilogramos() {
   alert("El resultado es" + " " + onzaIngresada / 35.274);
 }
 
-conversor ();
+function convertirLibrasAOnzas() {
+  let libraIngresada2 = prompt("Ingrese las libras a convertir en Kilogramos")
+  console.log("cantidad en libras:", libraIngresada2 / 0.0625)
 
-/**Así había armado antes el conversor. Funcionaba, dandole un valor desde la consola
+  alert("El resultado es" + " " + libraIngresada2 / 0.0625);
+}
+
+
+nombre();
+
+
+edad();
+
+
+contenido();
+
+
+queRico();
+
+
+seleccionPostre();
+
+
+conversor();
+
+/**Así había armado antes el conversor. Funcionaba, dandole un valor desde la consola, pero no sabía hacer lo del prompt
  * 
  * 
  * function KilogramosAOtro(valor1) {
