@@ -10,6 +10,35 @@ function nombre() {
   alert("Hola" + " " + nombreIngresado);
 }
 
+function edad (){
+  let edad = parseInt(prompt("Contanos cuál es tu edad"));
+  
+  do {
+    if (edad >= 18) {
+      console.log("Eres mayor de edad");
+      alert("Eres mayor de edad,  puedes hacer nuestras recetas sobre tragos");
+  
+    } else {
+      console.log("Eres menor de edad");
+      alert("Eres menor de edad, no puedes hacer nuestras recetas sobre tragos")
+    }
+  } while (isNaN(edad))
+  
+  }
+
+  function contenido () {
+    let cocinar = "TeGustaCocinar"
+    
+    alert("Ahora queremos saber si nuestro contenido es el indicado para vos")
+    
+    do {
+      cocinar = prompt("contanos si te gusta cocinar para conocer el contenido de nuestro sitio (contestar con si o no)");
+    
+    } while (cocinar != "si");
+    
+    alert("entonces estas en el lugar indicado. Si tu respuesta es negativa no podremos ayudarte :(")
+    }
+
 function queRico() {
   let recetas = prompt("¿Qué tipo de recetas te gusta hacer? 1)Pastas 2)Pizza 3)Postres 0)Para salir ");
 
@@ -35,92 +64,6 @@ function queRico() {
 
   }
 }
-
-
-nombre();
-
-let edad = parseInt(prompt("Contanos cuál es tu edad"));
-
-do {
-  if (edad >= 18) {
-    console.log("Eres mayor de edad");
-    alert("Eres mayor de edad,  puedes hacer nuestras recetas sobre tragos");
-
-  } else {
-    console.log("Eres menor de edad");
-    alert("Eres menor de edad, no puedes hacer nuestras recetas sobre tragos")
-  }
-} while (isNaN(edad))
-
-
-
-let cocinar = "TeGustaCocinar"
-
-alert("Ahora queremos saber si nuestro contenido es el indicado para vos")
-
-do {
-  cocinar = prompt("contanos si te gusta cocinar para conocer el contenido de nuestro sitio (contestar con si o no)");
-
-} while (cocinar != "si");
-
-alert("entonces estas en el lugar indicado. Si tu respuesta es negativa no podremos ayudarte :(")
-
-
-
-queRico();
-
-function KilogramosAOtro(valor1) {
-  return (cantidad1) => (valor1 * cantidad1);
-}
-
-const KilogramosALibras = KilogramosAOtro(2.20462);
-const KilogramosAOnzas = KilogramosAOtro(35.274);
-const KilogramosAGramos = KilogramosAOtro(1000);
-
-
-
-const cantidad1 = 2;
-console.log(KilogramosAGramos(cantidad1));
-
-alert(KilogramosAGramos(cantidad1))
-
-function LibrasAOtro(valor2) {
-  return (cantidad2) => (valor2 / cantidad2);
-}
-
-const LibrasAKilogramos = LibrasAOtro(2.2046);
-const LibrasAGramos = LibrasAOtro(0.0022046);
-const LibrasAOnzas = LibrasAOtro(0.0625);
-
-const cantidad2 = 4;
-
-console.log(LibrasAKilogramos(cantidad2));
-alert(LibrasAKilogramos(cantidad2));
-
-
-
-
-
-
-function OnzasAOtro(valor3) {
-  return (cantidad3) => (valor3 / cantidad3);
-}
-
-
-const OnzasAKilogramos = OnzasAOtro(35.274);
-const OnzasAGramos = OnzasAOtro(0.035274);
-const OnzasALibras = OnzasAOtro(16);
-
-const cantidad3 = 3;
-
-console.log(OnzasALibras(cantidad3));
-alert(OnzasALibras(cantidad3));
-
-
-
-
-
-
 
 
 /**Objeto con Class */
@@ -181,9 +124,7 @@ function seleccionPostre() {
           alert ("Más adelante podras encontrar otro tipo de recetas")
           break;
 
-        default:
-          buscarPostre(postreElegido)
-          break;
+        
       }
     }
     else {
@@ -194,29 +135,80 @@ function seleccionPostre() {
   while (postreElegido !== 4 && postreElegido !== 0)
 }
 
-function buscarPostre(valor) {
-  const postreBuscado = postres.find(postre => postre.id === valor)
-  elegirDificultad(postreBuscado)
-}
 
-function elegirDificultad (dificultadElegida) {
-  let dificultades = prompt("Ingrese dificultad deseada");
 
-  if (postresDificultades.some(postre => postre.id === dificultadElegida.id)) {
-    postresDificultades.forEach(postre => {
-      if (postre.id === dificultadElegida.id) {
-        postre.dificultades = postre.dificultades + dificultades
-      }
-    })
-  } else {
-let productoPorDificultad = {
-  id: dificultadElegida.id,
-  nombre: dificultadElegida.nombre,
-  tiempo: dificultadElegida.tiempo,
-  dificultades: dificultadElegida.dificultades,
-}  }
-alert ("elegiste la dificultad de tu postre")
-}
+
+
+
+nombre();
+
+
+edad ();
+
+
+
+contenido ();
+
+
+queRico();
+
 
 seleccionPostre();
-elegirDificultad ();
+function KilogramosAOtro(valor1) {
+  return (cantidad1) => (valor1 * cantidad1);
+}
+
+const KilogramosALibras = KilogramosAOtro(2.20462);
+const KilogramosAOnzas = KilogramosAOtro(35.274);
+const KilogramosAGramos = KilogramosAOtro(1000);
+
+
+
+const cantidad1 = 2;
+console.log(KilogramosAGramos(cantidad1));
+
+alert(KilogramosAGramos(cantidad1))
+
+function LibrasAOtro(valor2) {
+  return (cantidad2) => (valor2 / cantidad2);
+}
+
+const LibrasAKilogramos = LibrasAOtro(2.2046);
+const LibrasAGramos = LibrasAOtro(0.0022046);
+const LibrasAOnzas = LibrasAOtro(0.0625);
+
+const cantidad2 = 4;
+
+console.log(LibrasAKilogramos(cantidad2));
+alert(LibrasAKilogramos(cantidad2));
+
+
+
+
+
+
+function OnzasAOtro(valor3) {
+  return (cantidad3) => (valor3 / cantidad3);
+}
+
+
+const OnzasAKilogramos = OnzasAOtro(35.274);
+const OnzasAGramos = OnzasAOtro(0.035274);
+const OnzasALibras = OnzasAOtro(16);
+
+const cantidad3 = 3;
+
+console.log(OnzasALibras(cantidad3));
+alert(OnzasALibras(cantidad3));
+
+
+
+
+
+
+
+
+
+
+
+
