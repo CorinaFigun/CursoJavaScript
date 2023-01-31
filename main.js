@@ -131,7 +131,7 @@ class TiposPostres {
     this.tiempo = tiempo;
     this.dificultad = dificultad;
     this.link = link;
-    this.id =id; 
+    this.id = id;
 
 
     this.mostrarDificultad = function () {
@@ -143,11 +143,11 @@ class TiposPostres {
 
 
 
-const postre1 = new TiposPostres("treinta minutos", "baja", "www.recetasCori/moussemaracuyá.net",1);
+const postre1 = new TiposPostres("treinta minutos", "baja", "www.recetasCori/moussemaracuyá.net", 1);
 
-const postre2 = new TiposPostres("una hora y media", "media", "www.recetascori/tiramisu.net",2);
+const postre2 = new TiposPostres("una hora y media", "media", "www.recetascori/tiramisu.net", 2);
 
-const postre3 = new TiposPostres("cuarenta minutos", "alta", "www.recetascori/rogel",3);
+const postre3 = new TiposPostres("cuarenta minutos", "alta", "www.recetascori/rogel", 3);
 
 
 
@@ -157,13 +157,20 @@ let postresDificultades = []
 function seleccionPostre() {
   let postreElegido;
   do {
-    postreElegido = parseInt (prompt("Ingrese el grado de dificultad del postre que le gustaría cocinar: 1-baja 2-media 3-alta. Para salir, ingrese 0. Para buscar recetas de pastas presione 4"))
+    postreElegido = parseInt(prompt("Ingrese el grado de dificultad del postre que le gustaría cocinar: 1-baja 2-media 3-alta. Para salir, ingrese 0. Para buscar recetas de pastas presione 4"))
 
     if (postreElegido >= 0 && postreElegido <= 4) {
       switch (postreElegido) {
         case 1:
-          alert ("Podes ver nuestra receta de mousse de maracuya en: www.recetasCori/moussemaracuyá.net");
-          prompt = ("Chequea los datos siguientes" + postre1);
+          alert("Podes ver nuestra receta de mousse de maracuya en: www.recetasCori/moussemaracuyá.net");
+          break;
+
+        case 2:
+          alert("Podes ver nuestra receta de mousse de tiramisu en: www.recetascori/tiramisu.net");
+          break;
+
+        case 3:
+          alert("Podes ver nuestra receta de mousse de rogel en: www.recetascori/rogel.net");
           break;
 
         case 0:
@@ -171,11 +178,11 @@ function seleccionPostre() {
           break;
 
         case 4:
-          recetasPastas()
+          alert ("Más adelante podras encontrar otro tipo de recetas")
           break;
 
         default:
-          buscarPostre (postreElegido)
+          buscarPostre(postreElegido)
           break;
       }
     }
@@ -184,26 +191,32 @@ function seleccionPostre() {
     }
   }
 
- while (postreElegido !== 4 && postreElegido !== 0)
+  while (postreElegido !== 4 && postreElegido !== 0)
 }
 
-function buscarPostre (valor) {
-const postreBuscado = postres.find (postre => postre.id === valor)
-elegirDificultad (postreBuscado)
+function buscarPostre(valor) {
+  const postreBuscado = postres.find(postre => postre.id === valor)
+  elegirDificultad(postreBuscado)
 }
 
 function elegirDificultad (dificultadElegida) {
-  let postresDificultades = prompt ("Ingrese dificultad deseada");
-if (postresDificultades.some (postre => postre.id  === dificultadElegida.id)) {
-  postreDificultades.forEach (postre=> {
-    if (postre.id === dificultadElegida.id) {
-      postre.postresDificultades = postre.postresDificultades + postresDificultades 
-    }
-  } )
-} else {
+  let dificultades = prompt("Ingrese dificultad deseada");
 
-  alert ("Muchas gracias")
-}
+  if (postresDificultades.some(postre => postre.id === dificultadElegida.id)) {
+    postresDificultades.forEach(postre => {
+      if (postre.id === dificultadElegida.id) {
+        postre.dificultades = postre.dificultades + dificultades
+      }
+    })
+  } else {
+let productoPorDificultad = {
+  id: dificultadElegida.id,
+  nombre: dificultadElegida.nombre,
+  tiempo: dificultadElegida.tiempo,
+  dificultades: dificultadElegida.dificultades,
+}  }
+alert ("elegiste la dificultad de tu postre")
 }
 
-seleccionPostre ();
+seleccionPostre();
+elegirDificultad ();
