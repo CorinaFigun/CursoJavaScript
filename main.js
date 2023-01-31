@@ -10,34 +10,34 @@ function nombre() {
   alert("Hola" + " " + nombreIngresado);
 }
 
-function edad (){
+function edad() {
   let edad = parseInt(prompt("Contanos cuál es tu edad"));
-  
+
   do {
     if (edad >= 18) {
       console.log("Eres mayor de edad");
       alert("Eres mayor de edad,  puedes hacer nuestras recetas sobre tragos");
-  
+
     } else {
       console.log("Eres menor de edad");
       alert("Eres menor de edad, no puedes hacer nuestras recetas sobre tragos")
     }
   } while (isNaN(edad))
-  
-  }
 
-  function contenido () {
-    let cocinar = "TeGustaCocinar"
-    
-    alert("Ahora queremos saber si nuestro contenido es el indicado para vos")
-    
-    do {
-      cocinar = prompt("contanos si te gusta cocinar para conocer el contenido de nuestro sitio (contestar con si o no)");
-    
-    } while (cocinar != "si");
-    
-    alert("entonces estas en el lugar indicado. Si tu respuesta es negativa no podremos ayudarte :(")
-    }
+}
+
+function contenido() {
+  let cocinar = "TeGustaCocinar"
+
+  alert("Ahora queremos saber si nuestro contenido es el indicado para vos")
+
+  do {
+    cocinar = prompt("contanos si te gusta cocinar para conocer el contenido de nuestro sitio (contestar con si o no)");
+
+  } while (cocinar != "si");
+
+  alert("entonces estas en el lugar indicado. Si tu respuesta es negativa no podremos ayudarte :(")
+}
 
 function queRico() {
   let recetas = prompt("¿Qué tipo de recetas te gusta hacer? 1)Pastas 2)Pizza 3)Postres 0)Para salir ");
@@ -121,10 +121,10 @@ function seleccionPostre() {
           break;
 
         case 4:
-          alert ("Más adelante podras encontrar otro tipo de recetas")
+          alert("Más adelante podras encontrar otro tipo de recetas")
           break;
 
-        
+
       }
     }
     else {
@@ -143,18 +143,103 @@ function seleccionPostre() {
 nombre();
 
 
-edad ();
+edad();
 
 
 
-contenido ();
+contenido();
 
 
 queRico();
 
 
 seleccionPostre();
-function KilogramosAOtro(valor1) {
+
+
+
+
+
+
+
+
+
+
+
+function conversor() {
+  let medidaElegida;
+  do {
+    medidaElegida = parseInt(prompt("Ingrese qué medidas desea convertir 1-Kilogramos a Libras 2-Libras a Kilogramos 3-Kilogramos a Onzas 4- Onzas a Kilogramos. Si no queres hacer ninguna conversión, ingresa 0. "))
+
+    if (medidaElegida >= 0 && medidaElegida <= 5) {
+      switch (medidaElegida) {
+        case 1:
+
+          convertirKilogramosALibras()
+
+          break;
+
+        case 2:
+          convertirLibrasAKilogramos()
+          break;
+
+        case 3:
+          convertirKilogramosaOnzas()
+          break;
+
+        case 0:
+          alert("Saliste, nos vemos en la próxima receta!")
+          break;
+
+        case 4:
+          convertirOnzasaKilogramos()
+          break;
+
+
+      }
+    }
+    else {
+      alert("ingresó un valor inválido")
+    }
+  }
+
+  while (medidaElegida !== 4 && medidaElegida !== 0)
+}
+
+function convertirKilogramosALibras() {
+  let kilogramoIngresado = prompt("Ingrese los kilos a convertir a libras")
+  console.log("cantidad en kilos:", kilogramoIngresado * 2.20462)
+
+  alert("El resultado es" + " " + kilogramoIngresado * 2.20462);
+}
+
+
+function convertirLibrasAKilogramos() {
+  let libraIngresada = prompt("Ingrese las libras a convertir en Kilogramos")
+  console.log("cantidad en libras:", libraIngresada / 2.20462)
+
+  alert("El resultado es" + " " + libraIngresada / 2.20462);
+}
+
+function convertirKilogramosaOnzas() {
+  let kilogramoIngresado2 = prompt("Ingrese los kilogramos a convertir en onzas")
+  console.log("cantidad en libras:", kilogramoIngresado2 * 35.274)
+
+  alert("El resultado es" + " " + kilogramoIngresado2 * 35.274);
+}
+
+function convertirOnzasaKilogramos() {
+  let onzaIngresada = prompt("Ingrese los kilogramos a convertir en onzas")
+  console.log("cantidad en libras:", onzaIngresada / 35.274)
+
+  alert("El resultado es" + " " + onzaIngresada / 35.274);
+}
+
+conversor ();
+
+/**Así había armado antes el conversor. Funcionaba, dandole un valor desde la consola
+ * 
+ * 
+ * function KilogramosAOtro(valor1) {
   return (cantidad1) => (valor1 * cantidad1);
 }
 
@@ -202,13 +287,7 @@ console.log(OnzasALibras(cantidad3));
 alert(OnzasALibras(cantidad3));
 
 
-
-
-
-
-
-
-
-
-
-
+ * 
+ * 
+ * 
+ */
