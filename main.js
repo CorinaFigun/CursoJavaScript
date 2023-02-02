@@ -8,7 +8,21 @@ function nombre() {
   console.log(nombre)
 
   alert("Hola" + " " + nombreIngresado);
+
+  const pnombre = document.createElement ("pnombre");
+
+  pnombre.innerHTML = nombre;
+
+  let input1 = document.getElementById ("pnombre");
+
+
+  input1.addEventListener ('input', () => {
+    console.log (input1.value)
+  });
+  
 }
+
+
 
 /**funcion para pedir la edad */
 
@@ -25,6 +39,8 @@ function edad() {
       alert("Eres menor de edad, no puedes hacer nuestras recetas sobre tragos")
     }
   } while (isNaN(edad))
+
+
 
 }
 
@@ -215,7 +231,7 @@ function convertirOnzasaKilogramos() {
 }
 
 function convertirLibrasAOnzas() {
-  let libraIngresada2 = prompt("Ingrese las libras a convertir en Kilogramos")
+  let libraIngresada2 = prompt("Ingrese las libras a convertir en onzas")
   console.log("cantidad en libras:", libraIngresada2 / 0.0625)
 
   alert("El resultado es" + " " + libraIngresada2 / 0.0625);
@@ -238,6 +254,10 @@ seleccionPostre();
 
 
 conversor();
+
+
+
+const input = document.getElementById ("input1")
 
 /**Así había armado antes el conversor. Funcionaba, dandole un valor desde la consola, pero no sabía hacer lo del prompt
  * 
@@ -294,3 +314,11 @@ alert(OnzasALibras(cantidad3));
  * 
  * 
  */
+
+
+
+/**DOM */
+
+
+
+
