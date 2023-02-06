@@ -1,45 +1,95 @@
 
-/** Pregunta sobre cocina */
 
-function contenido() {
-  let cocinar = "TeGustaCocinar"
 
-  alert("Ahora queremos saber si nuestro contenido es el indicado para vos")
+let html = ""
 
-  do {
-    cocinar = prompt("contanos si te gusta cocinar para conocer el contenido de nuestro sitio (contestar con si o no)");
+function calcularEdad(nombre, diaNacimiento, mesNacimiento, anioNacimiento) 
+{
+  let nombre=document.getElementById("nombre").value;
+  let diaNacimiento=document.getElementById("dia").value;
+  let mesNacimiento=document.getElementById("mes").value;
+  let anioNacimiento =document.getElementById("anio").value;
+  let salida=document.getElementById("salida");
+  
+        this.nombre=nombre;
+        this.diaNacimiento=diaNacimiento;
+        this.mesNacimiento=mesNacimiento;
+        this.anioNacimiento=anioNacimiento;
+    
+        this.edad=function edad()
+        {
+           let calcula=0;
+           let objeto=new Date();
+           let dia=objeto.getDate();
+           let mes= objeto.getMonth()+1;
+           let hoy=objeto.getFullYear();
 
-  } while (cocinar != "si");
+                if(mes<this.mesNacimiento||(mes==this.mesNacimiento&&dia<this.dia))
+                {
+                  return calcula=parseInt(hoy-this.anioNacimiento)-1; 
+                }
+                else
+                {
+                   return calcula=parseInt(hoy-this.anioNacimiento);  
+                }
+          };
+    salida.innerHTML= "La edad actual de "+nombre+" es  "+this.edad()+".";
 
-  alert("entonces estas en el lugar indicado. Si tu respuesta es negativa no podremos ayudarte :(")
+    //Agrego el mensaje sobre si puede hacer o no tragos, según mayoría de edad. Esto antes salía a través de prompts y alerts
+     do {
+      if (this.edad () >= 18) {
+        salida2.innerHTML ="Eres mayor de edad,  puedes hacer nuestras recetas sobre tragos";
+  
+      } else {
+        salida3.innerHTML = "Eres menor de edad, no puedes hacer nuestras recetas sobre tragos";
+      }
+    } while (isNaN(this.edad ()))
+  
+
+
+
+    html += `
+    <h1>Queremos saber de vos</h1>
+  
+
+    <div class="caja">
+        <h2>Calcular Edad</h2>
+        <p>Escriba su (nombre ,dia , mes y año) de nacimiento para que así podamos calcular <br />su edad actual </p> 
+        
+       <p>NOTA:el mes que va a ingresar tene que ser en <span>numeros</span></p>
+        
+          <label for="">Ingrese su nombre</label>
+          <input type="text" id="nombre">
+          
+         
+          <label for="">Ingrese dia de nacimiento </label>
+          <input type="text" id="dia">
+        <br>
+     
+           <label for="">Ingrese el mes de nacimiento </label>
+          <input type="text" id="mes">
+        
+       
+        <label for="">Ingrese año de nacimiento </label>
+        <input type="text" id="anio">
+        <br/>
+       
+          <button onclick="calcularEdad()">CALCULAR</button>
+          <p class="res">Respuesta</p>
+          <div id="salida"> </div>
+          <div id="salida2"> </div>
+          <div id="salida3"> </div>
+
+     </div>
+        
+`
 }
 
-/** Pregunta tipos de recetas */
-function queRico() {
-  let recetas = prompt("¿Qué tipo de recetas te gusta hacer? 1)Pastas 2)Pizza 3)Postres 0)Para salir ");
+document.getElementById('container').innerHTML = html
 
-  while (recetas !== "0") {
 
-    switch (recetas) {
 
-      case "1":
-        alert("te dejamos el link de nuestras mejores pastas: www.RecetasCori/pastas.net");
-        break;
-      case "2":
-        alert("te dejamos el link de nuestras mejores pizzas: www.RecetasCori/pizzas.net");
-        break;
-      case "3":
-        alert("te dejamos el link de nuestras mejores postres: www.RecetasCori/postres.net");
-        break;
-      default:
-        alert("seguramente encontraras otras recetas de tu interes");
-        break;
-    }
 
-    recetas = prompt("¿Qué tipo de recetas te gusta hacer? 1)Pastas 2)Pizza 3)Postres 0)Para salir ");
-
-  }
-}
 
 
 /**Objeto con Class para postres*/
@@ -117,50 +167,6 @@ do { postreElegido = console.log ("hola")
 
   while (postreElegido !== 4 && postreElegido !== 0)
 }
-function calcularEdad(nombre, diaNacimiento, mesNacimiento, anioNacimiento) 
-{
-  let nombre=document.getElementById("nombre").value;
-  let diaNacimiento=document.getElementById("dia").value;
-  let mesNacimiento=document.getElementById("mes").value;
-  let anioNacimiento =document.getElementById("anio").value;
-  let salida=document.getElementById("salida");
-  
-        this.nombre=nombre;
-        this.diaNacimiento=diaNacimiento;
-        this.mesNacimiento=mesNacimiento;
-        this.anioNacimiento=anioNacimiento;
-    
-        this.edad=function edad()
-        {
-           let calcula=0;
-           let objeto=new Date();
-           let dia=objeto.getDate();
-           let mes= objeto.getMonth()+1;
-           let hoy=objeto.getFullYear();
-
-                if(mes<this.mesNacimiento||(mes==this.mesNacimiento&&dia<this.dia))
-                {
-                  return calcula=parseInt(hoy-this.anioNacimiento)-1; 
-                }
-                else
-                {
-                   return calcula=parseInt(hoy-this.anioNacimiento);  
-                }
-          };
-    salida.innerHTML= "La edad actual de "+nombre+" es  "+this.edad()+".";
-
-    //Agrego el mensaje sobre si puede hacer o no tragos, según mayoría de edad. Esto antes salía a través de prompts y alerts
-     do {
-      if (this.edad () >= 18) {
-        salida2.innerHTML ="Eres mayor de edad,  puedes hacer nuestras recetas sobre tragos";
-  
-      } else {
-        salida3.innerHTML = "Eres menor de edad, no puedes hacer nuestras recetas sobre tragos";
-      }
-    } while (isNaN(this.edad ()))
-  
-}
-
 
 
       function convertir(e) {
@@ -432,3 +438,52 @@ function seleccionPostre() {
 }
 
  */
+
+
+
+
+
+
+//**
+/** Pregunta sobre cocina 
+
+function contenido() {
+  let cocinar = "TeGustaCocinar"
+
+  alert("Ahora queremos saber si nuestro contenido es el indicado para vos")
+
+  do {
+    cocinar = prompt("contanos si te gusta cocinar para conocer el contenido de nuestro sitio (contestar con si o no)");
+
+  } while (cocinar != "si");
+
+  alert("entonces estas en el lugar indicado. Si tu respuesta es negativa no podremos ayudarte :(")
+}
+
+/** Pregunta tipos de recetas 
+function queRico() {
+  let recetas = prompt("¿Qué tipo de recetas te gusta hacer? 1)Pastas 2)Pizza 3)Postres 0)Para salir ");
+
+  while (recetas !== "0") {
+
+    switch (recetas) {
+
+      case "1":
+        alert("te dejamos el link de nuestras mejores pastas: www.RecetasCori/pastas.net");
+        break;
+      case "2":
+        alert("te dejamos el link de nuestras mejores pizzas: www.RecetasCori/pizzas.net");
+        break;
+      case "3":
+        alert("te dejamos el link de nuestras mejores postres: www.RecetasCori/postres.net");
+        break;
+      default:
+        alert("seguramente encontraras otras recetas de tu interes");
+        break;
+    }
+
+    recetas = prompt("¿Qué tipo de recetas te gusta hacer? 1)Pastas 2)Pizza 3)Postres 0)Para salir ");
+
+  }
+}
+*/

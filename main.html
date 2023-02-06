@@ -12,40 +12,21 @@
 </head>
 
 <body>
-    <h1>Queremos saber de vos</h1>
-  
+  <div id="container" class="container"></div>
 
-    <div class="caja">
-        <h2>Calcular Edad</h2>
-        <p>Escriba su (nombre ,dia , mes y año) de nacimiento para que así podamos calcular <br />su edad actual </p> 
-        
-       <p>NOTA:el mes que va a ingresar tene que ser en <span>numeros</span></p>
-        
-          <label for="">Ingrese su nombre</label>
-          <input type="text" id="nombre">
-          
-         
-          <label for="">Ingrese dia de nacimiento </label>
-          <input type="text" id="dia">
-        <br>
-     
-           <label for="">Ingrese el mes de nacimiento </label>
-          <input type="text" id="mes">
-        
-       
-        <label for="">Ingrese año de nacimiento </label>
-        <input type="text" id="anio">
-        <br/>
-       
-          <button onclick="calcularEdad()">CALCULAR</button>
-          <p class="res">Respuesta</p>
-          <div id="salida"> </div>
-          <div id="salida2"> </div>
-          <div id="salida3"> </div>
+
+     <div> Contanos que tipos de postres te gustaría cocinar
+<p>Ingrese el grado de dificultad del postre que le gustaría cocinar: 1-baja 2-media 3-alta. Para salir, ingrese 0. </p>
+<input type="number" id="postreElegido"/>
+<button onclick="seleccionPostre()">KE POSTRES!!</button>
+
+
+<div id="salidapostre1"> </div>
+<div id="salidapostre2"> </div>
+<div id="salidapostre3"> </div>
+
 
      </div>
-
-     
       
      <div>  <strong>Conversor de Medidas</strong><br>
 
@@ -58,6 +39,7 @@
         <button onclick="convertir(event)" name="convertirKilogramosaOnzas">Kilogramos a Onzas</button>
         <button onclick="convertir(event)" name="convertirLibrasAOnzas">Libras a Onzas</button><br><br>
     </div>
-       
+    <script src="main.js"> </script>
+
     </body>
 </html>
