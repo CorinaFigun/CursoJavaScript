@@ -117,7 +117,6 @@ do { postreElegido = console.log ("hola")
 
   while (postreElegido !== 4 && postreElegido !== 0)
 }
-  seleccionPostre ();
 function calcularEdad(nombre, diaNacimiento, mesNacimiento, anioNacimiento) 
 {
   let nombre=document.getElementById("nombre").value;
@@ -162,7 +161,6 @@ function calcularEdad(nombre, diaNacimiento, mesNacimiento, anioNacimiento)
   
 }
 
-calcularEdad ();
 
 
       function convertir(e) {
@@ -208,7 +206,6 @@ calcularEdad ();
          
         }
 
-convertir ();
 
 
         //Codigos anteriores
