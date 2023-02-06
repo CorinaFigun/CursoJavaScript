@@ -12,34 +12,51 @@
 </head>
 
 <body>
-  <div id="container" class="container"></div>
-
-
-     <div> Contanos que tipos de postres te gustaría cocinar
-<p>Ingrese el grado de dificultad del postre que le gustaría cocinar: 1-baja 2-media 3-alta. Para salir, ingrese 0. </p>
-<input type="number" id="postreElegido"/>
-<button onclick="seleccionPostre()">KE POSTRES!!</button>
-
-
-<div id="salidapostre1"> </div>
-<div id="salidapostre2"> </div>
-<div id="salidapostre3"> </div>
-
+    
+    <div class="caja">
+        <h1>Calcula Edad</h1>
+        <p>Escriba su (nombre ,dia , mes y año) de nacicmiento para que haci podamos calcular <br />su edad actual </p> 
+        <p>Ejemplo <br>
+       Sayda 22 <span>03</span> 1999</p>
+        <p>respuesta :la edad actual de Sayda es 17 </p>
+       <p>NOTA:el mes que ba ha ingresar tene que ser en <span>numeros</span></p>
+        
+          <label for="">Ingrese su nombre</label>
+          <input type="text" id="nombre">
+          
+         
+          <label for="">Ingrese dia de nacimiento </label>
+          <input type="text" id="dia">
+        <br>
+     
+           <label for="">Ingrese el mes de nacimiento </label>
+          <input type="text" id="mes">
+        
+       
+        <label for="">Ingrese año de nacimiento </label>
+          <input type="text" id="anio">
+        <br/>
+       
+          <button onclick="calculaEdad()">CALCULAR</button>
+          <p class="res">Respuesta</p>
+          <div id="salida">_</div>
+          <div id="salida2">_</div>
+          <div id="salida3">_</div>
 
      </div>
-      
-     <div>  <strong>Conversor de Medidas</strong><br>
+     
+<div>  <strong>Conversor de Medidas</strong><br>
 
-        <br>Ingrese valor a convertir<br>
-        <input type="number" id ="cantidad" name="numero">
-        <div id="mensaje"></div><br>
-       
-        <button onclick="convertir(event)" name="convertirKilogramosALibras">Kilogramos a Libras </button>
-        <button onclick="convertir(event)" name="convertirLibrasAKilogramos">Libras a Kilogramos </button><br><br>
-        <button onclick="convertir(event)" name="convertirKilogramosaOnzas">Kilogramos a Onzas</button>
-        <button onclick="convertir(event)" name="convertirLibrasAOnzas">Libras a Onzas</button><br><br>
-    </div>
-    <script src="main.js"> </script>
+    <br>Ingrese valor a convertir<br>
+    <input type="number" id ="cantidad" name="numero">
+    <div id="mensaje"></div><br>
+   
+    <button onclick="convertir(event)" name="convertirKilogramosALibras">Kilogramos a Libras </button>
+    <button onclick="convertir(event)" name="convertirLibrasAKilogramos">Libras a Kilogramos </button><br><br>
+    <button onclick="convertir(event)" name="convertirKilogramosaOnzas">Kilogramos a Onzas</button>
+    <button onclick="convertir(event)" name="convertirLibrasAOnzas">Libras a Onzas</button><br><br>
+</div>
 
     </body>
 </html>
+
