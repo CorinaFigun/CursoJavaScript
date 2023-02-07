@@ -140,7 +140,7 @@ pastas.forEach(el => {
         <div class=${classCard} >
             <img src=${el.img} class="img" />
             <ul class="list">
-                <h3>Nuestras disciplinas</h3>
+                <h3>Nuestras recetas de pastas</h3>
                 <hr />
                 <br />
                 <li>
@@ -152,14 +152,14 @@ pastas.forEach(el => {
                 </li>
                 <li>
                     <p>
-                        En
+                        Dificultad
                         <b>
                             ${el.dificultad}
                         </b>
                     </p>
                 </li>
             </ul>
-            <button id=${el.id} class="button" onclick=buscarRecetasPastas(${el.id})>Inscribirse</button>
+            <button id=${el.id} class="button" onclick=buscarRecetasPastas(${el.id})>Buscar</button>
         </div>
 `
 
@@ -180,9 +180,9 @@ function buscarRecetasPastas(idbusquedaRecetasPastas) {
       misInscripciones.push(recetaVeg)
       localStorage.setItem("lista", JSON.stringify(recetasPastas))
     } else {
-      alert("Ya estás inscripto! No podés inscribirte 2 o más veces, mi rey")
+      alert("Encontraste una gran receta vegetariana")
     }
   } else {
-    alert("Esta disciplina NO ESTÁ DISPONIBLE para inscribirse")
+    alert("Esta receta no es vegetariana")
   }
 }
