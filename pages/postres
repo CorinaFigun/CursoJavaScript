@@ -15,7 +15,6 @@
                 <div class="container">
                     <a class="navbar-brand" href="./index.html">
                         <img src="../assets/cocinea.jpeg" alt="cocinera" width="80" height="80">
-
                     </a>
                 </div>
             </nav>
@@ -53,8 +52,11 @@
 </head>
 
 <body>
-    <div id="container" class="container"></div>
-<script src="../main.js"> </script>
+    
+
+    <script src="../main.js"> </script>
+    
+    
 
 
 
