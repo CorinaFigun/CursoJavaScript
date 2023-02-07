@@ -12,7 +12,7 @@
             <nav nav class="navbar bg-light">
                 <div class="container">
                     <a class="navbar-brand" href="./index.html">
-                        <img src="../assets/cocinea.jpeg" alt="cocinera" width="80" height="100">
+                        <img src="../assets/cocinea.jpeg" alt="cocinera" width="65" height="65">
 
                     </a>
                 </div>
@@ -28,11 +28,11 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" a href="./conversor.html"> <button type="button"
-                                class="btn btn-success">Conversor Medidas</button></a>
+                                class="btn btn-success">Conversor de Medidas para tus recetas</button></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./recetasPastas.html">
-                            <button type="button" class="btn btn-success">Recetas recetasPastas</button>
+                            <button type="button" class="btn btn-success">Las mejores recetas de Pastas</button>
                         </a>
                     </li>
                 </ul>
@@ -48,16 +48,16 @@
 <body>
     
     <div class="caja">
-        <h1>Calcula Edad</h1>
-        <p>Escriba su (nombre ,dia , mes y año) de nacimiento para poder calcular <br />su edad actual </p> 
+        <h1>Contanos un poco de vos</h1>
+        <p>Escribí tu nombre ,dia , mes y año de nacimiento para saber si podes hacer nuestras recetas de tragos </p> 
       
         
           <label for="">Ingrese su nombre</label>
-          <input type="text" id="nombre">
+          <input type="text" id="nombre" placeholder="nombre">
           
          
           <label for="">Ingrese dia de nacimiento </label>
-          <input type="text" id="dia">
+          <input type="text" id="dia" placeholder="dia">
         <br>
      
            <label for="">Ingrese el mes de nacimiento </label>
@@ -68,7 +68,7 @@
           <input type="text" id="anio">
         <br/>
        
-          <button onclick="calculaEdad()">CALCULAR</button>
+          <button onclick="calcularEdad()">CALCULAR</button>
           <p class="res">Respuesta</p>
           <div id="salida">_</div>
           <div id="salida2">_</div>

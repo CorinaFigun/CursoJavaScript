@@ -2,7 +2,7 @@
 
 
 
-function calculaEdad(nombre, diaNacimiento, mesNacimiento, anioNacimiento) {
+function calcularEdad(nombre, diaNacimiento, mesNacimiento, anioNacimiento) {
   var nombre = document.getElementById("nombre").value;
   var diaNacimiento = document.getElementById("dia").value;
   var mesNacimiento = document.getElementById("mes").value;
