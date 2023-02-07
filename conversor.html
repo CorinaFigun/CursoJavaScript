@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,38 +48,23 @@
 
 <body>
     
-    <div class="caja">
-        <h1>Calcula Edad</h1>
-        <p>Escriba su (nombre ,dia , mes y año) de nacimiento para poder calcular <br />su edad actual </p> 
-      
-        
-          <label for="">Ingrese su nombre</label>
-          <input type="text" id="nombre">
-          
-         
-          <label for="">Ingrese dia de nacimiento </label>
-          <input type="text" id="dia">
-        <br>
-     
-           <label for="">Ingrese el mes de nacimiento </label>
-          <input type="text" id="mes">
-        
-       
-        <label for="">Ingrese año de nacimiento </label>
-          <input type="text" id="anio">
-        <br/>
-       
-          <button onclick="calculaEdad()">CALCULAR</button>
-          <p class="res">Respuesta</p>
-          <div id="salida">_</div>
-          <div id="salida2">_</div>
-          <div id="salida3">_</div>
+   
+    <div>  <strong>Conversor de Medidas</strong><br>
 
-     </div>
-     
+        <br>Ingrese valor a convertir<br>
+        <input type="number" id ="cantidad" name="numero">
+        <div id="mensaje"></div><br>
+       
+        <button onclick="convertir(event)" name="convertirKilogramosALibras">Kilogramos a Libras </button>
+        <button onclick="convertir(event)" name="convertirLibrasAKilogramos">Libras a Kilogramos </button><br><br>
+        <button onclick="convertir(event)" name="convertirKilogramosaOnzas">Kilogramos a Onzas</button>
+        <button onclick="convertir(event)" name="convertirLibrasAOnzas">Libras a Onzas</button><br><br>
+    </div>
+    <script src="./main.js"> </script>
+    
+    
 
 
 
     </body>
 </html>
-
