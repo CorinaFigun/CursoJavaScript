@@ -135,12 +135,11 @@ let pastas = [
 let html = ""
 
 pastas.forEach(el => {
-  const classCard = el.vegetariana ? "card" : "redCard"
-  html += `
-        <div class=${classCard} >
+  const classCard = el.vegetariana ? "card" : "greenCard"
+  html += `<section>
+        <div class=${classCard} > 
             <img src=${el.img} class="img" />
             <ul class="list">
-                <h3>Nuestras recetas de pastas</h3>
                 <hr />
                 <br />
                 <li>
@@ -159,8 +158,11 @@ pastas.forEach(el => {
                     </p>
                 </li>
             </ul>
-            <button id=${el.id} class="button" onclick=buscarRecetasPastas(${el.id})>Buscar</button>
+            <button id=${el.id} class="button" onclick= agregarRecetaFavorita() (${el.id})>Agregar a mis recetas favoritas</button>
+            <button id=${el.id} class="button" onclick= sacarRecetaFavorita() (${el.id})>Sacar de mis recetas favoritas</button>
+
         </div>
+        </section>
 `
 
 })
@@ -169,51 +171,41 @@ document.getElementById("container").innerHTML = html
 
 
 
-function buscarRecetasPastas(idbusquedaRecetasPastas) {
+function agregarRecetaFavorita(idAgregarFav) {
 
-  let VegetarianaSINO = pastas.find(el => el.id === idbusquedaRecetasPastas)
-  localStorage.getItem("lista") ? recetasPastas = JSON.parse(localStorage.getItem("lista")) : recetasPastas = []
-
-  if (VegetarianaSINO.vegetariana) {
-    if (!misInscripciones.some(el => el.id === idbusquedaRecetasPastas)) {
-      let recetaVeg = recetasPastas.find(el => el.id === idbusquedaRecetasPastas)
-      misInscripciones.push(recetaVeg)
-      localStorage.setItem("lista", JSON.stringify(recetasPastas))
-    } else {
-      alert("Encontraste una gran receta vegetariana")
-    }
-  } else {
-    alert("Esta receta no es vegetariana")
-  }
+  console.log ("garegaste a favoritos la receta", idAgregarFav)
 }
 
+function sacarRecetaFavorita(idSacarFav) {
 
+  console.log ("Sacaste de favoritos la receta", idSacarFav)
+}
 
 /**Objeto con Class para postres*/
 
 class TiposPostres {
-  constructor(tiempo, dificultadPostres, link, id) {
-
+  constructor(nombrePostre, tiempo, dificultadPostres, link, id) {
+    this.nombrePostre = nombrePostre;
     this.tiempo = tiempo;
-    this.dificultadPostres = this.dificultadPostres;
+    this.dificultadPostres = dificultadPostres;
     this.link = link;
     this.id = id;
 
 
     this.mostrarDificultad = function () {
-      console.log("Esta receta tiene un grado de dificultad" + " " + dificultadPOstres)
-      this.mostrarDificultad = alert("Esta receta tiene un grado de dificultad" + " " + dificultadPOstres)
+      console.log("Esta receta tiene un grado de dificultad" + " " + dificultadPostres)
+      this.mostrarDificultad = alert("Esta receta tiene un grado de dificultad" + " " + dificultadPostres)
     }
   }
 }
 
 
 
-const postre1 = new TiposPostres("treinta minutos", "baja", "www.recetasCori/moussemaracuyá.net", 1);
+const postre1 = new TiposPostres("MOusse de Maracuyá","treinta minutos", "baja", "www.recetasCori/moussemaracuyá.net", 1);
 
-const postre2 = new TiposPostres("una hora y media", "media", "www.recetascori/tiramisu.net", 2);
+const postre2 = new TiposPostres("Tiramisu", "una hora y media", "media", "www.recetascori/tiramisu.net", 2);
 
-const postre3 = new TiposPostres("cuarenta minutos", "alta", "www.recetascori/rogel", 3);
+const postre3 = new TiposPostres("Torta Rogel", "cuarenta minutos", "alta", "www.recetascori/rogel", 3);
 
 
 
@@ -221,21 +213,21 @@ const postres = [postre1, postre2, postre3]
 let postresDificultades = []
 
 
+let html2 =""
 
-  
-TiposPostres.forEach(el => {
-  const classCard = el.vegetariana ? "card" : "redCard"
-  html += `
-        <div class=${classCard} >
-            <img src=${el.img} class="img" />
+postresDificultades.forEach(el => {
+
+  html2 += `
+        <div>
+           
             <ul class="list">
-                <h3>Nuestras recetas de pastas</h3>
+                <h3>Nuestras recetas de postres</h3>
                 <hr />
                 <br />
                 <li>
                     <p>
                         <b>
-                            ${el.nombre}
+                            ${el.nombrePostre}
                         </b>
                     </p>
                 </li>
@@ -243,50 +235,50 @@ TiposPostres.forEach(el => {
                     <p>
                         Dificultad
                         <b>
-                            ${el.dificultad}
+                            ${el.dificultadPostres}
                         </b>
                     </p>
                 </li>
             </ul>
-            <button id=${el.id} class="button" onclick=buscarRecetasPastas(${el.id})>Buscar</button>
+            <button id=${el.id} class="button" onclick=seleccionPostre()(${el.id})>Buscar</button>
         </div>
 `
 
 })
 
-document.getElementById("contenedor").innerHTML = html
+document.getElementById("contenedor").innerHTML = html2
 
 
 
 
-  function seleccionPostre ()
-  {
-  let salidapostre1 =document.getElementById("salidapostre1");
-  let salidapostre2 =document.getElementById("salidapostre2");
-  let salidapostre3 =document.getElementById("salidapostre3");
-  let salida=document.getElementById ("salida");
-let postreElegido=document.getElementById('postreElegido').value;
+function seleccionPostre() {
+  let salidapostre1 = document.getElementById("salidapostre1");
+  let salidapostre2 = document.getElementById("salidapostre2");
+  let salidapostre3 = document.getElementById("salidapostre3");
+  let salida = document.getElementById("salida");
+  let postreElegido = document.getElementById('postreElegido').value;
 
 
-do { postreElegido = console.log ("hola")
+  do {
+    postreElegido = console.log("hola")
     if (postreElegido >= 0 && postreElegido <= 4) {
       switch (postreElegido) {
-        case 1:          
-          salidapostre1.innerHTML= "Podes ver nuestra receta de mousse de maracuya en: www.recetasCori/moussemaracuyá.net";
+        case 1:
+          salidapostre1.innerHTML = "Podes ver nuestra receta de mousse de maracuya en: www.recetasCori/moussemaracuyá.net";
           break;
 
         case 2:
-          salidapostre2.innerHTML= "Podes ver nuestra receta de mousse de tiramisu en: www.recetasCori/tiramisu.net";
+          salidapostre2.innerHTML = "Podes ver nuestra receta de mousse de tiramisu en: www.recetasCori/tiramisu.net";
           break;
 
         case 3:
-          salidapostre3.innerHTML= "Podes ver nuestra receta de mousse de tiramisu en: www.recetasCori/tiramisu.net";
+          salidapostre3.innerHTML = "Podes ver nuestra receta de mousse de tiramisu en: www.recetasCori/tiramisu.net";
           break;
 
-          default:
+        default:
 
           break;
-       
+
       }
     }
     else {

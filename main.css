@@ -112,14 +112,14 @@ h2 {color: black;
     margin: 1rem;
     background-color: #f5f5f5;
 }
-.redCard{
+.greenCard{
     display: flex;
     border: 1px solid grey;
     width: 45rem;
     height: 15rem;
     padding: 1rem;
     margin: 1rem;
-    background-color: crimson;
+    background-color: rgb(58, 91, 58);
 }
 .list{
     list-style: none;
