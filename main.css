@@ -104,7 +104,7 @@ h2 {color: black;
 
 
   .card{
-    display: flex;
+    display: inline-block;
     border: 1px solid grey;
     width: 45rem;
     height: 15rem;

@@ -134,18 +134,18 @@ let pastas = [
 
 let html = ""
 
-pastas.forEach(el => {
-  const classCard = el.vegetariana ? "card" : "greenCard"
+pastas.forEach(pastas => {
+  const classCard = pastas.vegetariana ? "card" : "greenCard"
   html += `<section>
         <div class=${classCard} > 
-            <img src=${el.img} class="img" />
+            <img src=${pastas.img} class="img" />
             <ul class="list">
                 <hr />
                 <br />
                 <li>
                     <p>
                         <b>
-                            ${el.nombre}
+                            ${pastas.nombre}
                         </b>
                     </p>
                 </li>
@@ -153,13 +153,13 @@ pastas.forEach(el => {
                     <p>
                         Dificultad
                         <b>
-                            ${el.dificultad}
+                            ${pastas.dificultad}
                         </b>
                     </p>
                 </li>
             </ul>
-            <button id=${el.id} class="button" onclick= agregarRecetaFavorita() (${el.id})>Agregar a mis recetas favoritas</button>
-            <button id=${el.id} class="button" onclick= sacarRecetaFavorita() (${el.id})>Sacar de mis recetas favoritas</button>
+            <button id=${pastas.id} class="button" onclick=agregarRecetaFavorita(${pastas.id})>Agregar a mis recetas favoritas</button>
+            <button id=${pastas.id} class="button" onclick=sacarRecetaFavorita(${pastas.id})>Sacar de mis recetas favoritas</button>
 
         </div>
         </section>
@@ -167,13 +167,15 @@ pastas.forEach(el => {
 
 })
 
-document.getElementById("container").innerHTML = html
+document.getElementById("container1").innerHTML = html
 
 
 
 function agregarRecetaFavorita(idAgregarFav) {
 
-  console.log ("garegaste a favoritos la receta", idAgregarFav)
+  console.log ("agregaste a favoritos la receta", idAgregarFav)
+
+  
 }
 
 function sacarRecetaFavorita(idSacarFav) {
