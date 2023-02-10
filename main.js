@@ -160,7 +160,6 @@ pastas.forEach(pastas => {
             </ul>
             <button id=${pastas.id} class="button" onclick=agregarRecetaFavorita(${pastas.id})>Agregar a mis recetas favoritas</button>
             <button id=${pastas.id} class="button" onclick=sacarRecetaFavorita(${pastas.id})>Sacar de mis recetas favoritas</button>
-            <p class="res">Respuesta</p>
             <div id= "salida4" >_</div>
             
         </div>
@@ -177,6 +176,8 @@ function agregarRecetaFavorita(idAgregarFav) {
 
   let recetasFav = pastas.find (pastas => pastas.id === idAgregarFav)
   recetasPastas.push (recetasFav)
+ localStorage.setItem ("lista", JSON.stringify(recetasPastas))
+
   alert ("Entre tus pastas favoritas está:" + recetasFav.nombrePasta)
 
   console.log (recetasPastas)
@@ -185,122 +186,15 @@ function agregarRecetaFavorita(idAgregarFav) {
 
 function sacarRecetaFavorita(idSacarFav) {
 
-  let recetasFav = pastas.find (pastas => pastas.id === sacarRecetaFavorita)
+  let recetasFav = pastas.find (pastas => pastas.id === idSacarFav)
   recetasPastas.push (recetasFav)
+  localStorage.setItem ("lista", JSON.stringify(recetasPastas))
+
+  alert ("Entre tus pastas favoritas ya no está:" + recetasFav.nombrePasta)
 
 
-  recetasPastas.push (sacarRecetaFavorita)
 
   console.log ("Entre tus pastas favoritas ya no está:", idSacarFav)
-  alert ("Entre tus pastas favoritas ya no está:" + pastas.nombrePasta)
 
-}
-
-/**Objeto con Class para postres*/
-
-class TiposPostres {
-  constructor(nombrePostre, tiempo, dificultadPostres, link, id) {
-    this.nombrePostre = nombrePostre;
-    this.tiempo = tiempo;
-    this.dificultadPostres = dificultadPostres;
-    this.link = link;
-    this.id = id;
-
-
-    this.mostrarDificultad = function () {
-      console.log("Esta receta tiene un grado de dificultad" + " " + dificultadPostres)
-      this.mostrarDificultad = alert("Esta receta tiene un grado de dificultad" + " " + dificultadPostres)
-    }
-  }
-}
-
-
-
-const postre1 = new TiposPostres("MOusse de Maracuyá","treinta minutos", "baja", "www.recetasCori/moussemaracuyá.net", 1);
-
-const postre2 = new TiposPostres("Tiramisu", "una hora y media", "media", "www.recetascori/tiramisu.net", 2);
-
-const postre3 = new TiposPostres("Torta Rogel", "cuarenta minutos", "alta", "www.recetascori/rogel", 3);
-
-
-
-const postres = [postre1, postre2, postre3]
-let postresDificultades = []
-
-
-let html2 =""
-
-postresDificultades.forEach(el => {
-
-  html2 += `
-        <div>
-           
-            <ul class="list">
-                <h3>Nuestras recetas de postres</h3>
-                <hr />
-                <br />
-                <li>
-                    <p>
-                        <b>
-                            ${el.nombrePostre}
-                        </b>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Dificultad
-                        <b>
-                            ${el.dificultadPostres}
-                        </b>
-                    </p>
-                </li>
-            </ul>
-            <button id=${el.id} class="button" onclick=seleccionPostre()(${el.id})>Buscar</button>
-        </div>
-`
-
-})
-
-document.getElementById("contenedor").innerHTML = html2
-
-
-
-
-function seleccionPostre() {
-  let salidapostre1 = document.getElementById("salidapostre1");
-  let salidapostre2 = document.getElementById("salidapostre2");
-  let salidapostre3 = document.getElementById("salidapostre3");
-  let salida = document.getElementById("salida");
-  let postreElegido = document.getElementById('postreElegido').value;
-
-
-  do {
-    postreElegido = console.log("hola")
-    if (postreElegido >= 0 && postreElegido <= 4) {
-      switch (postreElegido) {
-        case 1:
-          salidapostre1.innerHTML = "Podes ver nuestra receta de mousse de maracuya en: www.recetasCori/moussemaracuyá.net";
-          break;
-
-        case 2:
-          salidapostre2.innerHTML = "Podes ver nuestra receta de mousse de tiramisu en: www.recetasCori/tiramisu.net";
-          break;
-
-        case 3:
-          salidapostre3.innerHTML = "Podes ver nuestra receta de mousse de tiramisu en: www.recetasCori/tiramisu.net";
-          break;
-
-        default:
-
-          break;
-
-      }
-    }
-    else {
-      salida.innerHTML = "no podemos ayudarte";
-    }
-  }
-
-  while (postreElegido !== 4 && postreElegido !== 0)
 }
 
