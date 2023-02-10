@@ -94,7 +94,7 @@ let recetasPastas = []
 let pastas = [
   {
     id: 1,
-    nombre: "Gnocchi tricolor con salsa de tomate casera",
+    nombrePasta: "Gnocchi tricolor con salsa de tomate casera",
     vegetariana: true,
     dificultad: "baja",
     img: "https://4.bp.blogspot.com/-3s78bQ0DLcI/WBcvmSwhZ9I/AAAAAAAALOo/SlagzMHYB5EqvsfsV2jkkSG7sJvCtp3JACLcB/s640/IMG_20161028_141956copia.jpg",
@@ -102,14 +102,14 @@ let pastas = [
   },
   {
     id: 2,
-    nombre: "Spaghetti con ostras",
+    nombrePasta: "Spaghetti con ostras",
     vegetariana: false,
     dificultad: "media",
     img: "https://media-cdn.tripadvisor.com/media/photo-s/15/e6/d2/e0/spaghetti-con-ostras.jpg",
   },
   {
     id: 3,
-    nombre: "Penne rigatti Spicy",
+    nombrePasta: "Penne rigatti Spicy",
     vegetariana: true,
     dificultad: "media",
     img: "https://i2.wp.com/chilipeppermadness.com/wp-content/uploads/2019/10/Penne-Arrabbiata-Recipe1.jpg",
@@ -117,14 +117,14 @@ let pastas = [
   },
   {
     id: 4,
-    nombre: "Las cintas de pulpo",
+    nombrePasta: "Las cintas de pulpo",
     vegetariana: false,
     dificultad: "alta",
     img: "https://www.elreydelpulpo.com/wp-content/uploads/2019/03/portada-comer-pescado.jpg",
   },
   {
     id: 5,
-    nombre: "Rigatoni con hongos",
+    nombrePasta: "Rigatoni con hongos",
     vegetariana: true,
     dificultad: "baja",
     img: "https://periodicodelpilar.medios.digital/download/multimedia.normal.80ba9bee63a52baa.494d475f333930395f6e6f726d616c2e6a7067.jpg",
@@ -145,7 +145,7 @@ pastas.forEach(pastas => {
                 <li>
                     <p>
                         <b>
-                            ${pastas.nombre}
+                            ${pastas.nombrePasta}
                         </b>
                     </p>
                 </li>
@@ -160,7 +160,9 @@ pastas.forEach(pastas => {
             </ul>
             <button id=${pastas.id} class="button" onclick=agregarRecetaFavorita(${pastas.id})>Agregar a mis recetas favoritas</button>
             <button id=${pastas.id} class="button" onclick=sacarRecetaFavorita(${pastas.id})>Sacar de mis recetas favoritas</button>
-
+            <p class="res">Respuesta</p>
+            <div id= "salida4" >_</div>
+            
         </div>
         </section>
 `
@@ -173,12 +175,12 @@ document.getElementById("container1").innerHTML = html
 
 function agregarRecetaFavorita(idAgregarFav) {
 
-  let recetasFav = pastas.find (pastas => pastas.id === agregarRecetaFavorita)
+  let recetasFav = pastas.find (pastas => pastas.id === idAgregarFav)
   recetasPastas.push (recetasFav)
+  alert ("Entre tus pastas favoritas está:" + recetasFav.nombrePasta)
 
   console.log (recetasPastas)
   console.log ("Entre tus pastas favoritas está:", idAgregarFav)
-
 }
 
 function sacarRecetaFavorita(idSacarFav) {
@@ -190,6 +192,7 @@ function sacarRecetaFavorita(idSacarFav) {
   recetasPastas.push (sacarRecetaFavorita)
 
   console.log ("Entre tus pastas favoritas ya no está:", idSacarFav)
+  alert ("Entre tus pastas favoritas ya no está:" + pastas.nombrePasta)
 
 }
 
