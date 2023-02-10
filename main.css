@@ -11,50 +11,33 @@ body{
     position: relative;
     height: 100%;
     width: 100%;
-    display: flex;
     align-items: center;
     justify-content: center;
+    background: url(https://www.recetasderechupete.com/wp-content/uploads/2022/02/En-la-cocina-aprender-a-cocinar.jpg);
 }
 
-.fondoCocina::before {
-    content: "";
-    background: url(https://www.recetasnestlecam.com/sites/default/files/inline-images/importancia-cocinar-en-casa.jpg);
-    background-size: cover;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 30%;
-    filter: blur(1px)
-}
 
 .fondoMedidas {
   position: relative;
   height: 100%;
   width: 100%;
-  display: flex;
   align-items: center;
   justify-content: center;
+  background: url(https://www.repagas.com/wp-content/uploads/2019/04/Ingredientes.jpg);
+
 }
 
-.fondoMedidas::before {
-  content: "";
-  background: url(https://www.repagas.com/wp-content/uploads/2019/04/Ingredientes.jpg);
-  background-size: cover;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 30%;
-  filter: blur(1px)
-} 
+
   h1 {
     color: black;
     text-shadow: 2px;
+    font-size: x-large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }  
 h2 {color: black;
+  font-size: large;
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
   #salida  {
      background: white;
@@ -95,7 +78,9 @@ h2 {color: black;
     color:rgb(23, 35, 23);
   }
   label{
-     color :grey;
+     color :rgb(255, 254, 253);
+     font-size: larger;
+     font-family: 'Times New Roman', Times, serif;
   }
 
 
@@ -104,7 +89,7 @@ h2 {color: black;
 
 
   .card{
-    display: inline-block;
+    display: flex;
     border: 1px solid grey;
     width: 45rem;
     height: 15rem;

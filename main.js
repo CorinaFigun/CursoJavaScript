@@ -140,8 +140,7 @@ pastas.forEach(pastas => {
         <div class=${classCard} > 
             <img src=${pastas.img} class="img" />
             <ul class="list">
-                <hr />
-                <br />
+               
                 <li>
                     <p>
                         <b>
