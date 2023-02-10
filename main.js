@@ -173,14 +173,24 @@ document.getElementById("container1").innerHTML = html
 
 function agregarRecetaFavorita(idAgregarFav) {
 
-  console.log ("agregaste a favoritos la receta", idAgregarFav)
+  let recetasFav = pastas.find (pastas => pastas.id === agregarRecetaFavorita)
+  recetasPastas.push (recetasFav)
 
-  
+  console.log (recetasPastas)
+  console.log ("Entre tus pastas favoritas está:", idAgregarFav)
+
 }
 
 function sacarRecetaFavorita(idSacarFav) {
 
-  console.log ("Sacaste de favoritos la receta", idSacarFav)
+  let recetasFav = pastas.find (pastas => pastas.id === sacarRecetaFavorita)
+  recetasPastas.push (recetasFav)
+
+
+  recetasPastas.push (sacarRecetaFavorita)
+
+  console.log ("Entre tus pastas favoritas ya no está:", idSacarFav)
+
 }
 
 /**Objeto con Class para postres*/
