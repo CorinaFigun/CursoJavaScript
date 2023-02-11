@@ -139,8 +139,7 @@ pastas.forEach(pastas => {
   html += `<section>
         <div class=${classCard} > 
             <img src=${pastas.img} class="img" />
-            <ul class="list">
-               
+            <ul>
                 <li>
                     <p>
                         <b>
@@ -159,7 +158,7 @@ pastas.forEach(pastas => {
             </ul>
             <button id=${pastas.id} class="button" onclick=agregarRecetaFavorita(${pastas.id})>Agregar a mis recetas favoritas</button>
             <button id=${pastas.id} class="button" onclick=sacarRecetaFavorita(${pastas.id})>Sacar de mis recetas favoritas</button>
-            <div id= "salida4" >_</div>
+            <div id= "salida4" > </div>
             
         </div>
         </section>
