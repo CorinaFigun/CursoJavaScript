@@ -156,8 +156,8 @@ pastas.forEach(pastas => {
                     </p>
                 </li>
             </ul>
-            <button id=${pastas.id} class="button" onclick=agregarRecetaFavorita(${pastas.id})>Agregar a mis recetas favoritas</button>
-            <button id=${pastas.id} class="button" onclick=sacarRecetaFavorita(${pastas.id})>Sacar de mis recetas favoritas</button>
+            <button id=${pastas.id} class="button" class="btn btn-success" onclick=agregarRecetaFavorita(${pastas.id})>Agregar a mis recetas favoritas</button>
+            <button id=${pastas.id} class="button" class="btn btn-success" onclick=sacarRecetaFavorita(${pastas.id})>Sacar de mis recetas favoritas</button>
             <div id= "salida4" > </div>
             
         </div>
@@ -165,6 +165,9 @@ pastas.forEach(pastas => {
 `
 
 })
+
+//** La card verde me queda distinta a la normal, en cuanto a la diposición interna de los elementos, no sé cómo mejorar eso */
+//** También el contenido de los botones se rebalsa :( */
 
 document.getElementById("container1").innerHTML = html
 
