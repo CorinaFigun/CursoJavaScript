@@ -1,19 +1,20 @@
-body{
-    background-size:cover;
-   opacity: 170%;
-   color: beige ;
-    background-position:center;
-    text-align:center;
-    font-size:20px;
-    
-  }
-  .fondoCocina {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    background: url(https://www.recetasderechupete.com/wp-content/uploads/2022/02/En-la-cocina-aprender-a-cocinar.jpg);
+body {
+  background-size: cover;
+  opacity: 170%;
+  color: beige;
+  background-position: center;
+  text-align: center;
+  font-size: 20px;
+
+}
+
+.fondoCocina {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background: url(https://www.recetasderechupete.com/wp-content/uploads/2022/02/En-la-cocina-aprender-a-cocinar.jpg);
 }
 
 
@@ -28,97 +29,112 @@ body{
 }
 
 
-  h1 {
-    color: black;
-    text-shadow: 2px;
-    font-size: x-large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}  
-h2 {color: black;
+h1 {
+  color: black;
+  text-shadow: 2px;
+  font-size: x-large;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+h2 {
+  color: black;
   font-size: large;
   font-style: italic;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-  #salida  {
-     background: white;
-     color: black;
-     margin:20px  15em;
-     padding:5px;
-     font-size:25px;
-  }
-  .res{
-    color:black;
 
-  }
-  #salidaA{
-    padding: 10px;
-    background: brown;
-     margin:20px  15em;
-     color: green;
-  }
-  button {
-    padding: 7px;
-    border-radius:7px;
-    font-weight: bolder;
-     background: rgb(137, 137, 126);
-    text-align: center;
-    color: chocolate;
-  }
-  input{
-    margin:10px;
-    padding: 7px;
-    border-radius:7px;
-    font-weight: bolder;
-     background: rgb(90, 90, 85);
-     color: black;
-    text-align: center;
-    border: none;
-  }
-  span{
-    color:rgb(23, 35, 23);
-  }
-  label{
-     color :rgb(255, 254, 253);
-     font-size: larger;
-     font-family: 'Times New Roman', Times, serif;
-  }
-
-
-
-
-  .greenCard{
-    display: inline-flex;
-    border: 1px solid grey;
-    width: 45rem;
-    height: 15rem;
-    padding: 1rem;
-    margin: 1rem;
-    background-color: rgb(58, 91, 58);
+#salida {
+  background: white;
+  color: black;
+  margin: 20px 15em;
+  padding: 5px;
+  font-size: 25px;
 }
 
-  .card{
-    display: inline-block;
-    border: 1px solid grey;
-    width: 45rem;
-    height: 15rem;
-    padding: 1rem;
-    margin: 1rem;
-    background-color: #f5f5f5;
+.res {
+  color: black;
+
 }
+
+#salidaA {
+  padding: 10px;
+  background: brown;
+  margin: 20px 15em;
+  color: green;
+}
+
+button {
+  padding: 7px;
+  border-radius: 7px;
+  font-weight: bolder;
+  background: rgb(137, 137, 126);
+  text-align: center;
+  color: chocolate;
+}
+
+input {
+  margin: 10px;
+  padding: 7px;
+  border-radius: 7px;
+  font-weight: bolder;
+  background: rgb(90, 90, 85);
+  color: black;
+  text-align: center;
+  border: none;
+}
+
+span {
+  color: rgb(23, 35, 23);
+}
+
+label {
+  color: rgb(255, 254, 253);
+  font-size: larger;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+
+.cards {
+  display: inline-flexbox;
+  border: 3px solid grey;
+  width: 85%;
+  height: 17rem;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.greenCard {
+
+  background-color: rgb(58, 91, 58);
+
+}
+
+.whiteCard {
+
+  background-color: #f5f5f5;
+
+
+}
+
 /** La card verde me queda distinta a la normal, en cuanto a la diposición interna de los elementos, no sé cómo mejorar eso */
-
-
-.img{
-    width: 13rem;
-    height: 13rem;
+.botones {
+  display: inline-block;
 }
-.button{
-    border-radius: 20%;
-    height: 3rem;
-    width: 8.5rem;
-    cursor: pointer;
-    background-color: lightgrey;
-    padding: 1rem;
-    margin: 0.5rem;
+
+.img {
+  width: 15rem;
+  height: 15rem;
 }
+
+.button {
+  border-radius: 20%;
+  height: 9rem;
+  width: 12rem;
+  cursor: pointer;
+  background-color: lightgrey;
+  padding: 1rem;
+  margin: 0.5rem;
+  align-content: center;
+}
+
 /** También el contenido de los botones en la pestaña de pastas se rebalsa  */

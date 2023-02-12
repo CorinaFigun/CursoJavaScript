@@ -135,13 +135,13 @@ let pastas = [
 let html = ""
 
 pastas.forEach(pastas => {
-  const classCard = pastas.vegetariana ? "card" : "greenCard"
+  const classCard = pastas.vegetariana ? "Whitecard" : "greenCard"
   html += `<section>
-        <div class=${classCard} > 
+        <div class=${classCard} class="cards"> 
             <img src=${pastas.img} class="img" />
             <ul>
                 <li>
-                    <p>
+                    <p class="card-title">
                         <b>
                             ${pastas.nombrePasta}
                         </b>
@@ -156,9 +156,9 @@ pastas.forEach(pastas => {
                     </p>
                 </li>
             </ul>
-            <button id=${pastas.id} class="button" class="btn btn-success" onclick=agregarRecetaFavorita(${pastas.id})>Agregar a mis recetas favoritas</button>
-            <button id=${pastas.id} class="button" class="btn btn-success" onclick=sacarRecetaFavorita(${pastas.id})>Sacar de mis recetas favoritas</button>
-            <div id= "salida4" > </div>
+            
+            <button id=${pastas.id} class="button" type="button" href="#" class="btn btn-primary" class="btn btn-success"onclick=agregarRecetaFavorita(${pastas.id})>Agregar a mis recetas favoritas</button>
+            <button id=${pastas.id} class="button" type="button" class="btn btn-success"onclick=sacarRecetaFavorita(${pastas.id})>Sacar de mis recetas favoritas</button>
             
         </div>
         </section>
