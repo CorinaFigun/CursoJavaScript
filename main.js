@@ -94,7 +94,7 @@ let recetasPastas = []
 let pastas = [
   {
     id: 1,
-    nombrePasta: "Gnocchi tricolor con salsa de tomate casera",
+    nombrePasta: "Gnocchi tricolor",
     vegetariana: true,
     dificultad: "baja",
     img: "https://4.bp.blogspot.com/-3s78bQ0DLcI/WBcvmSwhZ9I/AAAAAAAALOo/SlagzMHYB5EqvsfsV2jkkSG7sJvCtp3JACLcB/s640/IMG_20161028_141956copia.jpg",
@@ -135,13 +135,13 @@ let pastas = [
 let html = ""
 
 pastas.forEach(pastas => {
-  const classCard = pastas.vegetariana ? "Whitecard" : "greenCard"
+  const classCard = pastas.vegetariana ? "whiteCard" : "greenCard"
   html += `<section>
-        <div class=${classCard} class="cards"> 
+        <div class=${classCard} > 
             <img src=${pastas.img} class="img" />
             <ul>
                 <li>
-                    <p class="card-title">
+                    <p >
                         <b>
                             ${pastas.nombrePasta}
                         </b>
@@ -157,7 +157,7 @@ pastas.forEach(pastas => {
                 </li>
             </ul>
             
-            <button id=${pastas.id} class="button" type="button" href="#" class="btn btn-primary" class="btn btn-success"onclick=agregarRecetaFavorita(${pastas.id})>Agregar a mis recetas favoritas</button>
+            <button id=${pastas.id} class="button" type="button" class="btn btn-success"onclick=agregarRecetaFavorita(${pastas.id})>Agregar a mis recetas favoritas</button>
             <button id=${pastas.id} class="button" type="button" class="btn btn-success"onclick=sacarRecetaFavorita(${pastas.id})>Sacar de mis recetas favoritas</button>
             
         </div>

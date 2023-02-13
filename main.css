@@ -95,7 +95,7 @@ label {
 
 
 .cards {
-  display: inline-flexbox;
+  display: inline-flex;
   border: 3px solid grey;
   width: 85%;
   height: 17rem;
@@ -104,15 +104,23 @@ label {
 }
 
 .greenCard {
-
-  background-color: rgb(58, 91, 58);
-
+  border: 10px solid grey;
+  width: 92%;
+  height: 17rem;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: rgb(81, 119, 81);
+display: inline-flex;
 }
 
 .whiteCard {
-
+  border: 3px solid grey;
+  width: 92%;
+  height: 17rem;
+  padding: 1rem;
+  margin: 1rem;
   background-color: #f5f5f5;
-
+display: inline-flex;
 
 }
 
@@ -124,6 +132,9 @@ label {
 .img {
   width: 15rem;
   height: 15rem;
+  border-color:black;
+  border-radius: 12%;
+  border-style:groove;
 }
 
 .button {
@@ -131,10 +142,11 @@ label {
   height: 9rem;
   width: 12rem;
   cursor: pointer;
-  background-color: lightgrey;
+  background-color:bisque;
   padding: 1rem;
   margin: 0.5rem;
   align-content: center;
+  color: darkolivegreen;
 }
 
 /** También el contenido de los botones en la pestaña de pastas se rebalsa  */
