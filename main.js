@@ -179,8 +179,7 @@ function agregarRecetaFavorita(idAgregarFav) {
   recetasPastas.push (recetasFav)
  localStorage.setItem ("lista", JSON.stringify(recetasPastas))
 
-  alert ("Entre tus pastas favoritas está:" + recetasFav.nombrePasta)
-
+  swal ("Entre tus pastas favoritas está:" + recetasFav.nombrePasta)
   console.log (recetasPastas)
   console.log ("Entre tus pastas favoritas está:", idAgregarFav)
 }
@@ -191,7 +190,7 @@ function sacarRecetaFavorita(idSacarFav) {
   recetasPastas.push (recetasFav)
   localStorage.setItem ("lista", JSON.stringify(recetasPastas))
 
-  alert ("Entre tus pastas favoritas ya no está:" + recetasFav.nombrePasta)
+  swal("Entre tus pastas favoritas ya no está:" + recetasFav.nombrePasta)
 
 
 
