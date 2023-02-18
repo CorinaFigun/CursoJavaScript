@@ -175,26 +175,49 @@ document.getElementById("container1").innerHTML = html
 
 function agregarRecetaFavorita(idAgregarFav) {
 
-  let recetasFav = pastas.find (pastas => pastas.id === idAgregarFav)
-  recetasPastas.push (recetasFav)
- localStorage.setItem ("lista", JSON.stringify(recetasPastas))
+  let recetasFav = pastas.find(pastas => pastas.id === idAgregarFav)
+  recetasPastas.push(recetasFav)
+  localStorage.setItem("lista", JSON.stringify(recetasPastas))
 
-  swal ("Entre tus pastas favoritas está:" + recetasFav.nombrePasta)
-  console.log (recetasPastas)
-  console.log ("Entre tus pastas favoritas está:", idAgregarFav)
+  swal("Entre tus pastas favoritas está:" + recetasFav.nombrePasta)
+  console.log(recetasPastas)
+  console.log("Entre tus pastas favoritas está:", idAgregarFav)
 }
 
 function sacarRecetaFavorita(idSacarFav) {
 
-  let recetasFav = pastas.find (pastas => pastas.id === idSacarFav)
-  recetasPastas.push (recetasFav)
-  localStorage.setItem ("lista", JSON.stringify(recetasPastas))
+  let recetasFav = pastas.find(pastas => pastas.id === idSacarFav)
+  recetasPastas.push(recetasFav)
+  localStorage.setItem("lista", JSON.stringify(recetasPastas))
 
   swal("Entre tus pastas favoritas ya no está:" + recetasFav.nombrePasta)
 
 
 
-  console.log ("Entre tus pastas favoritas ya no está:", idSacarFav)
+  console.log("Entre tus pastas favoritas ya no está:", idSacarFav)
 
 }
 
+
+document.getElementById("container2").innerHTML = html
+
+const Postres = [
+
+  {id:1, nombre: "MOusse de Maracuya", dificultad: "Media"},
+  
+  {id: 2, nombre: "Torta rogel",dificultad:"alta"},
+  
+  {id: 3, nombre: "Brownie con nuez ", dificultad: "baja"},
+  
+  ]
+  
+  const pedirPostres = () => {
+  return new Promise ( (resolve, reject) => {
+  setTimeOut ( () => {
+  resolve (Postres) 
+  }, 3000)
+})
+swal (Postres)
+  }
+
+  
