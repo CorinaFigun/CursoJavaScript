@@ -220,4 +220,9 @@ const Postres = [
 swal (Postres)
   }
 
+  fetch ("productos.json")
+  .then ((Response) => {
+    console.log (Response);
+  return Response.json ();
+  })
   
