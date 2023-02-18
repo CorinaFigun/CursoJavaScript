@@ -149,4 +149,12 @@ display: inline-flex;
   color: darkolivegreen;
 }
 
-/** También el contenido de los botones en la pestaña de pastas se rebalsa  */
+.listaProductos{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.producto {
+  margin: 3px;
+}
