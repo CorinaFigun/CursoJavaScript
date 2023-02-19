@@ -124,7 +124,6 @@ display: inline-flex;
 
 }
 
-/** La card verde me queda distinta a la normal, en cuanto a la diposición interna de los elementos, no sé cómo mejorar eso */
 .botones {
   display: inline-block;
 }

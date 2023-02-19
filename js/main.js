@@ -1,29 +1,7 @@
 
 //Funciones
 
-function renderizarProductos (productos) {
-listaProductos.innerHTML= "";
-for (const producto of productos) {
-  const div = document.createElement ("div");
-div.className ="producto";
-  const h2 = document.createElement ("h2");
-  h2.innerHTML = `${producto.nombre}`;
 
-
-  const h4 = document.createElement ("h4");
-  h2.innerHTML = `${producto.precio}`;
-
-
-  const button = document.createElement ("button");
-  button.innerHTML = "Agregar al carrito";
-
-  button.addEventListener ("click", () => {});
-  console.log (producto);
-
- div.append (h2, h4, button);
- listaProductos.append (div);
-}
-}
 
 function calcularEdad(nombre, diaNacimiento, mesNacimiento, anioNacimiento) {
   var nombre = document.getElementById("nombre").value;
@@ -55,6 +33,8 @@ function calcularEdad(nombre, diaNacimiento, mesNacimiento, anioNacimiento) {
   };
   salida.innerHTML = "La edad actual de " + nombre + " es  " + this.edad() + ".";
 
+  
+
   //Agrego el mensaje sobre si puede hacer o no tragos, según mayoría de edad. Esto antes salía a través de prompts y alerts
   do {
     if (this.edad() >= 18) {
@@ -65,6 +45,9 @@ function calcularEdad(nombre, diaNacimiento, mesNacimiento, anioNacimiento) {
     }
   } while (isNaN(this.edad()))
 
+  let botonIndex = document.getElementById ("botonEdad")
+  botonIndex.onclick =() => {console.log ("click")}
+  botonIndex.onmousemove =() => {console.log ("move")};
 
 }
 
@@ -189,6 +172,12 @@ pastas.forEach(pastas => {
 
 })
 
+
+//const button = document.createElement ("button");
+//button.innerHTML = "Agregar al carrito";
+  
+//button.addEventListener ("click", () => {});
+//console.log (producto); */
 //** La card verde me queda distinta a la normal, en cuanto a la diposición interna de los elementos, no sé cómo mejorar eso */
 //** También el contenido de los botones se rebalsa :( */
 
@@ -243,15 +232,4 @@ const Postres = [
 swal (Postres)
   }
 
-
-
-  const listaProductos = document.getElementById (listaProductos);
-  fetch ("productos.json")
-  .then ((response) => {
-    console.log (response);
-  return response.json ();
-  })
-  .then ((responseProductos) => {
-    renderizarProductos (responseProductos);
-  });
-
+ 
