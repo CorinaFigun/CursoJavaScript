@@ -157,3 +157,22 @@ display: inline-flex;
 .producto {
   margin: 3px;
 }
+
+.carrito {
+  margin-top: 1rem;
+}
+
+table tr th,
+table tr td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 0.5rem;
+}
+
+.ocultar {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
