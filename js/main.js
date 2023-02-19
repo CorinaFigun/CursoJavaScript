@@ -33,8 +33,12 @@ function calcularEdad(nombre, diaNacimiento, mesNacimiento, anioNacimiento) {
   };
   salida.innerHTML = "La edad actual de " + nombre + " es  " + this.edad() + ".";
 
-  
-
+ 
+   //const input = document.getElementById("nombre");
+   // input.addEventListener("input", (event) => {
+   //     console.log(event);
+   // })
+   
   //Agrego el mensaje sobre si puede hacer o no tragos, según mayoría de edad. Esto antes salía a través de prompts y alerts
   do {
     if (this.edad() >= 18) {
@@ -45,10 +49,10 @@ function calcularEdad(nombre, diaNacimiento, mesNacimiento, anioNacimiento) {
     }
   } while (isNaN(this.edad()))
 
-  let botonIndex = document.getElementById ("botonEdad")
-  botonIndex.onclick =() => {console.log ("click")}
-  botonIndex.onmousemove =() => {console.log ("move")};
+  
 
+
+  
 }
 
 
