@@ -1,6 +1,8 @@
 
 //Funciones
 
+let boton1 = document.getElementById ("btn1")
+boton1.addEventListener ("click", calcularEdad) 
 
 
 function calcularEdad(nombre, diaNacimiento, mesNacimiento, anioNacimiento) {
@@ -34,10 +36,6 @@ function calcularEdad(nombre, diaNacimiento, mesNacimiento, anioNacimiento) {
   salida.innerHTML = "La edad actual de " + nombre + " es  " + this.edad() + ".";
 
  
-   //const input = document.getElementById("nombre");
-   // input.addEventListener("input", (event) => {
-   //     console.log(event);
-   // })
    
   //Agrego el mensaje sobre si puede hacer o no tragos, según mayoría de edad. Esto antes salía a través de prompts y alerts
   do {
@@ -48,12 +46,10 @@ function calcularEdad(nombre, diaNacimiento, mesNacimiento, anioNacimiento) {
       salida3.innerHTML = "Eres menor de edad, no puedes hacer nuestras recetas sobre tragos";
     }
   } while (isNaN(this.edad()))
-
-  
-
-
   
 }
+
+
 
 
 function convertir(e) {
@@ -63,7 +59,9 @@ function convertir(e) {
     Kilo = document.getElementById("cantidad").value;
 
     Libra = Kilo * 2.20462;
-    document.getElementById("mensaje").innerHTML = "Libras: " + Libra;
+
+
+document.getElementById("mensaje").innerHTML = "Libras: " + Libra;
 
   }
 

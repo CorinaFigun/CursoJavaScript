@@ -1,8 +1,6 @@
-// Funciones
 
 function editarCantidad (producto, nuevaCantidad) {
 
-  // Busco índice del producto en el carrito
   const indiceProductoExiste = carrito.findIndex( (productoCarrito) => {
       return productoCarrito.nombre === producto.nombre;
   });
@@ -15,10 +13,8 @@ function editarCantidad (producto, nuevaCantidad) {
 
   }
 
-  // Renderizar el carrito
   renderizarCarrito(carrito);
 
-  // Guardo en LS
   agregarCarritoAlLS();
 }
 
@@ -168,11 +164,8 @@ function renderizarProductos (productos) {
           agregarAlCarrito(producto);
 
       });
-
-      // Agregamos los textos y el botón al div del producto
       div.append(h2, h4, button);
 
-      // Agregamos el div al contenedor de los productos
       listaProductos.append(div);
   }
 }
