@@ -180,12 +180,8 @@ pastas.forEach(pastas => {
   
 //button.addEventListener ("click", () => {});
 //console.log (producto); */
-//** La card verde me queda distinta a la normal, en cuanto a la diposición interna de los elementos, no sé cómo mejorar eso */
-//** También el contenido de los botones se rebalsa :( */
 
 document.getElementById("container1").innerHTML = html
-
-
 
 function agregarRecetaFavorita(idAgregarFav) {
 
@@ -213,7 +209,7 @@ function sacarRecetaFavorita(idSacarFav) {
 }
 
 
-document.getElementById("container2").innerHTML = html
+//document.getElementById("container2").innerHTML = html
 
 const Postres = [
 

@@ -5,10 +5,8 @@ function editarCantidad (producto, nuevaCantidad) {
       return productoCarrito.nombre === producto.nombre;
   });
 
-  // Si el producto está en el carrito
   if(indiceProductoExiste !== -1) {
 
-      // Le cambiamos el atributo cantidad por la nueva que se escribió en el input
       carrito[indiceProductoExiste].cantidad = nuevaCantidad;
 
   }
@@ -20,12 +18,10 @@ function editarCantidad (producto, nuevaCantidad) {
 
 function renderizarTotal () {
 
-  // Calculo el total
   const total = carrito.reduce( (acc, productoCarrito) => {
       return acc + (productoCarrito.precio * productoCarrito.cantidad);
   }, 0);
 
-  // Añado el total al span
   totalSpan.innerHTML = `$${total}`;
 }
 
@@ -47,15 +43,12 @@ function agregarCarritoAlLS () {
 
 function agregarAlCarrito (producto) {
 
-  // Busco índice del producto en el carrito
   const indiceProductoExiste = carrito.findIndex( (productoCarrito) => {
       return productoCarrito.nombre === producto.nombre;
   });
 
-  // Si el producto no está en el carrito
   if(indiceProductoExiste === -1) {
 
-      // Agrego un nuevo objeto al array de carrito
       carrito.push({
           nombre: producto.nombre,
           precio: producto.precio,
@@ -64,29 +57,23 @@ function agregarAlCarrito (producto) {
 
   } else {
 
-      // Modifico la cantidad del producto existente en el carrito
       carrito[indiceProductoExiste].cantidad++;
 
   }
 
-  // Renderizar el carrito
   renderizarCarrito(carrito);
 
-  // Guardo en LS
   agregarCarritoAlLS();
 }
 
 function renderizarCarrito (productos) {
 
-  // Limpio el contenedor
   tbodyCarrito.innerHTML = "";
 
   for(const producto of productos) {
 
-      // Creo el tr
       const tr = document.createElement("tr");
 
-      // Creo los tds
       const tdNombre = document.createElement("td");
       tdNombre.innerHTML = `${producto.nombre}`;
 
@@ -99,13 +86,10 @@ function renderizarCarrito (productos) {
 
       tdCantidad.append(spanCantidad);
 
-      // Agrego evento de click al span de la cantidad
       spanCantidad.addEventListener("click", () => {
 
-          // Ocultamos el span
           spanCantidad.className = "ocultar";
 
-          // Creamos un input
           const inputCantidad = document.createElement("input");
           inputCantidad.value = producto.cantidad;
 
@@ -113,40 +97,31 @@ function renderizarCarrito (productos) {
 
               const nuevaCantidad = inputCantidad.value;
 
-              // Mostrar nuevamente el span
               spanCantidad.className = "mostrar";
 
-              // Eliminar el input
               inputCantidad.remove();
 
-              // Editar cantidad
               editarCantidad(producto, nuevaCantidad);
           });
 
-          // Agregamos el input al td de cantidad
           tdCantidad.append(inputCantidad);
 
       });
 
-      // Agrego tds al tr
       tr.append(tdNombre, tdPrecio, tdCantidad);
 
-      // Agrego tr al tbody
       tbodyCarrito.append(tr);
   }
 
-  // Renderizar total
   renderizarTotal();
 }
 
 function renderizarProductos (productos) {
 
-  // Limpio el contenedor
   listaProductos.innerHTML = "";
 
   for(const producto of productos) {
 
-      // Crear el div principal
       const div = document.createElement("div");
       div.className = "producto";
 
