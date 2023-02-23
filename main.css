@@ -93,7 +93,6 @@ label {
   font-family: 'Times New Roman', Times, serif;
 }
 
-
 .cards {
   display: inline-flex;
   border: 3px solid grey;
@@ -110,7 +109,7 @@ label {
   padding: 1rem;
   margin: 1rem;
   background-color: rgb(81, 119, 81);
-display: inline-flex;
+  display: inline-flex;
 }
 
 .whiteCard {
@@ -120,7 +119,7 @@ display: inline-flex;
   padding: 1rem;
   margin: 1rem;
   background-color: #f5f5f5;
-display: inline-flex;
+  display: inline-flex;
 
 }
 
@@ -131,9 +130,9 @@ display: inline-flex;
 .img {
   width: 15rem;
   height: 15rem;
-  border-color:black;
+  border-color: black;
   border-radius: 12%;
-  border-style:groove;
+  border-style: groove;
 }
 
 .button {
@@ -141,11 +140,9 @@ display: inline-flex;
   height: 9rem;
   width: 12rem;
   cursor: pointer;
-  background-color:bisque;
+  background-color: bisque;
   padding: 1rem;
   margin: 0.5rem;
   align-content: center;
   color: darkolivegreen;
 }
-
-

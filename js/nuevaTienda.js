@@ -47,7 +47,7 @@ const DOMitems = document.querySelector('#items');
 const DOMcarrito = document.querySelector('#carrito');
 const DOMtotal = document.querySelector('#total');
 const DOMbotonVaciar = document.querySelector('#boton-vaciar');
-function agregarCarritoAlLS () {
+function agregarCarritoAlLS() {
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
