@@ -1,46 +1,44 @@
 
 
-     const productosTienda = [
-        {
-            id: 1,
-            nombre: 'Patata',
-            precio: 1,
-            
-        },
-        {
-            id: 2,
-            nombre: 'Cebolla',
-            precio: 1.2,
-            
-        },
-        {
-            id: 3,
-            nombre: 'Calabacin',
-            precio: 2.1,
-            
-        },
-        {
-            id: 4,
-            nombre: 'Fresas',
-            precio: 0.6,
-            
-        }
-    ];
 
+const productosTienda = [
+    {
+        id: 1,
+        nombre: 'Dulce de Leche Premium',
+        precio: 250,
+
+    },
+    {
+        id: 2,
+        nombre: 'Salsa de tomate sin agroquímico',
+        precio: 100,
+
+    },
+    {
+        id: 3,
+        nombre: 'Pulpa maracuyá',
+        precio: 450,
+
+    },
+    {
+        id: 4,
+        nombre: 'Gnocchi italianos envasados',
+        precio: 500,
+
+    }
+];
 
 
 let carrito = [];
-const divisa = '$';
+const moneda = '$';
 const DOMitems = document.querySelector('#items');
 const DOMcarrito = document.querySelector('#carrito');
 const DOMtotal = document.querySelector('#total');
 const DOMbotonVaciar = document.querySelector('#boton-vaciar');
+function agregarCarritoAlLS () {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+}
 
-// Funciones
-
-/**
- * Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
- */
 function renderizarProductos() {
     productosTienda.forEach((info) => {
         // Estructura
@@ -53,19 +51,19 @@ function renderizarProductos() {
         const miNodoTitle = document.createElement('h5');
         miNodoTitle.classList.add('card-title');
         miNodoTitle.textContent = info.nombre;
-        
+
         // Precio
         const miNodoPrecio = document.createElement('p');
         miNodoPrecio.classList.add('card-text');
-        miNodoPrecio.textContent = `${info.precio}${divisa}`;
+        miNodoPrecio.textContent = `${info.precio}${moneda}`;
         // Boton 
         const miNodoBoton = document.createElement('button');
         miNodoBoton.classList.add('btn', 'btn-primary');
         miNodoBoton.textContent = '+';
         miNodoBoton.setAttribute('marcador', info.id);
         miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
-        // Insertamos
-        
+
+
         miNodoCardBody.appendChild(miNodoTitle);
         miNodoCardBody.appendChild(miNodoPrecio);
         miNodoCardBody.appendChild(miNodoBoton);
@@ -74,108 +72,86 @@ function renderizarProductos() {
     });
 }
 
-/**
- * Evento para añadir un producto al carrito de la compra
- */
+
 function anyadirProductoAlCarrito(evento) {
-    // Anyadimos el Nodo a nuestro carrito
+
     carrito.push(evento.target.getAttribute('marcador'))
-    // Actualizamos el carrito 
+
     renderizarCarrito();
 
 }
 
-/**
- * Dibuja todos los productos guardados en el carrito
- */
+
 function renderizarCarrito() {
-    // Vaciamos todo el html
+
     DOMcarrito.textContent = '';
-    // Quitamos los duplicados
+
     const carritoSinDuplicados = [...new Set(carrito)];
-    // Generamos los Nodos a partir de carrito
+
     carritoSinDuplicados.forEach((item) => {
-        // Obtenemos el item que necesitamos de la variable base de datos
+
         const miItem = productosTienda.filter((itemProductosTienda) => {
-            // ¿Coincide las id? Solo puede existir un caso
+
             return itemProductosTienda.id === parseInt(item);
         });
-        // Cuenta el número de veces que se repite el producto
+
         const numeroUnidadesItem = carrito.reduce((total, itemId) => {
-            // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
             return itemId === item ? total += 1 : total;
         }, 0);
-        // Creamos el nodo del item del carrito
         const miNodo = document.createElement('li');
         miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
-        miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
-        // Boton de borrar
+        miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${moneda}`;
         const miBoton = document.createElement('button');
         miBoton.classList.add('btn', 'btn-danger', 'mx-5');
         miBoton.textContent = 'X';
         miBoton.style.marginLeft = '1rem';
         miBoton.dataset.item = item;
         miBoton.addEventListener('click', borrarItemCarrito);
-        // Mezclamos nodos
+
         miNodo.appendChild(miBoton);
         DOMcarrito.appendChild(miNodo);
     });
-    // Renderizamos el precio total en el HTML
     DOMtotal.textContent = calcularTotal();
 }
 
-/**
- * Evento para borrar un elemento del carrito
- */
+
 function borrarItemCarrito(evento) {
-    // Obtenemos el producto ID que hay en el boton pulsado
     const id = evento.target.dataset.item;
-    // Borramos todos los productos
     carrito = carrito.filter((carritoId) => {
         return carritoId !== id;
     });
-    // volvemos a renderizar
     renderizarCarrito();
 }
 
-/**
- * Calcula el precio total teniendo en cuenta los productos repetidos
- */
+
 function calcularTotal() {
-    // Recorremos el array del carrito 
     return carrito.reduce((total, item) => {
-        // De cada elemento obtenemos su precio
         const miItem = productosTienda.filter((itemProductosTienda) => {
             return itemProductosTienda.id === parseInt(item);
         });
-        // Los sumamos al total
         return total + miItem[0].precio;
     }, 0).toFixed(2);
 }
 
-/**
- * Varia el carrito y vuelve a dibujarlo
- */
+
 function vaciarCarrito() {
-    // Limpiamos los productos guardados
     carrito = [];
-    // Renderizamos los cambios
     renderizarCarrito();
 }
 
-// Eventos
+
 DOMbotonVaciar.addEventListener('click', vaciarCarrito);
 
-// Inicio
+
 renderizarProductos();
 renderizarCarrito();
 
-fetch("/js/productos.json")
-  .then( (response) => {
-      return response.json();
-  })
-  .then( (responseProductos) => {
+fetch("/js/productosTienda.json")
+    .then((response) => {
+        return response.json();
+    })
+    .then((responseProductos) => {
 
-      renderizarCarrito(responseProductos);
+        renderizarCarrito(responseProductos);
 
-  });
+    });

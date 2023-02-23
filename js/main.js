@@ -1,5 +1,4 @@
 
-//Funciones
 
 let boton1 = document.getElementById ("btn1")
 boton1.addEventListener ("click", calcularEdad) 
