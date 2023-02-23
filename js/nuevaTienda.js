@@ -25,6 +25,18 @@ const productosTienda = [
         nombre: 'Gnocchi italianos envasados',
         precio: 500,
 
+    },
+    {
+        id: 5,
+        nombre: 'Extracto de cilantro',
+        precio: 325.5,
+
+    },
+    {
+        id: 6,
+        nombre: 'Queso Parmesano Reggiano, horma ',
+        precio: 1510.79,
+
     }
 ];
 
