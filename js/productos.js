@@ -125,8 +125,8 @@ function renderizarProductos (productos) {
       const div = document.createElement("div");
       div.className = "producto";
 
-      const h2 = document.createElement("h2");
-      h2.innerHTML = `${producto.nombre}`;
+      const h3 = document.createElement("h3");
+      h3.innerHTML = `${producto.nombre}`;
 
       const h4 = document.createElement("h4");
       h4.innerHTML = `$${producto.precio}`;
@@ -139,7 +139,7 @@ function renderizarProductos (productos) {
           agregarAlCarrito(producto);
 
       });
-      div.append(h2, h4, button);
+      div.append(h3, h4, button);
 
       listaProductos.append(div);
   }
