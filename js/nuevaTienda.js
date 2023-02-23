@@ -1,6 +1,6 @@
 
 
-     const baseDeDatos = [
+     const productosTienda = [
         {
             id: 1,
             nombre: 'Patata',
@@ -42,7 +42,7 @@ const DOMbotonVaciar = document.querySelector('#boton-vaciar');
  * Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
  */
 function renderizarProductos() {
-    baseDeDatos.forEach((info) => {
+    productosTienda.forEach((info) => {
         // Estructura
         const miNodo = document.createElement('div');
         miNodo.classList.add('card', 'col-sm-4');
@@ -96,9 +96,9 @@ function renderizarCarrito() {
     // Generamos los Nodos a partir de carrito
     carritoSinDuplicados.forEach((item) => {
         // Obtenemos el item que necesitamos de la variable base de datos
-        const miItem = baseDeDatos.filter((itemBaseDatos) => {
+        const miItem = productosTienda.filter((itemProductosTienda) => {
             // ¿Coincide las id? Solo puede existir un caso
-            return itemBaseDatos.id === parseInt(item);
+            return itemProductosTienda.id === parseInt(item);
         });
         // Cuenta el número de veces que se repite el producto
         const numeroUnidadesItem = carrito.reduce((total, itemId) => {
@@ -145,8 +145,8 @@ function calcularTotal() {
     // Recorremos el array del carrito 
     return carrito.reduce((total, item) => {
         // De cada elemento obtenemos su precio
-        const miItem = baseDeDatos.filter((itemBaseDatos) => {
-            return itemBaseDatos.id === parseInt(item);
+        const miItem = productosTienda.filter((itemProductosTienda) => {
+            return itemProductosTienda.id === parseInt(item);
         });
         // Los sumamos al total
         return total + miItem[0].precio;
